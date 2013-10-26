@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Cellform Plateforme Sociale Libre</title>
+<link href="images/icon_default.gif" rel="shortcut icon" />
+<style type="text/css">
+body {
+	background-color: #FAFAFA;
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.nav {
+	padding: 0;
+	margin: 2.5em 0;
+	text-align:center;
+}
+
+.nav li {
+	display: inline;
+	list-style: none;
+	background-color:white;
+	border: 1px solid #AAAAAA;
+	border-radius: 10px 0 10px 0;
+}
+
+.nav a {
+	color:black;
+	text-decoration:none;
+	display:inline-block;
+	margin: 0 30px;
+}
+
+.nav a:hover {
+	color:blue;
+}
+
+#content {
+	width:700px;
+	margin:0 auto;
+}
+
+.cellframe {
+	margin-top:20px;
+	margin-left:220px;
+	background-color:#FFFFFF;
+	border-left:1px solid #BBD2E1;
+	border-right:1px solid #BBD2E1;
+	border-bottom:1px solid #BBD2E1;
+	border-top:1px solid #BBD2E1;
+}
+
+.cellframe-sidebar {
+	position:fixed;
+	background-color:#FFFFFF;
+	width:200px;
+	border-left:1px solid #BBD2E1;
+	border-right:1px solid #BBD2E1;
+	border-bottom:1px solid #BBD2E1;
+	border-top:1px solid #BBD2E1;
+}
+
+.footer {
+	position:relative;
+	top:100px;
+	text-align:center;
+}
+</style>
+
+</head>
+<body>
+<img alt="banner" border="0" src="images/official.jpg" width="100%" />
+
+<ul class="nav">
+	<li><a href="index.htm">Accueil</a></li>
+	<li><a href="http://milkncoffee.fr/">D&eacute;monstration</a></li>
+	<li><a href="man.htm">Manuel</a></li>
+	<li><a href="mailto:rootofgeno@gmail.com">Contact</a></li>
+</ul>
+
+<div class="cellframe-sidebar">
+	<fieldset>
+	<legend>Chapitres</legend>
+	<ul>
+		<li><a href="#Install">1 - Installation</a></li>
+		<li><a href="#Config">2 - Configuration</a></li>
+	</ul>
+	</fieldset>
+</div>
+
+<div class="cellframe">
+	<fieldset>
+	<legend>Manuel</legend>
+	<h1 id="Install"><span style="color:#0099ff;">1 - Installation</span></h1>
+	<hr/>
+	<p>&nbsp;</p>
+	<h3>Table des mati&egrave;res</h3>
+	<ul>
+		<li><a href="#Check">1.1 - V&eacute;rification avant installation</a></li>
+		<li><a href="#Start">1.2 - Lancer l&#39;installation</a></li>
+		<li><a href="#CheckExts">1.3 - V&eacute;rification des extensions et modules</a></li>
+		<li><a href="#CheckFiles">1.4 - V&eacute;rification des droits sur les fichiers</a></li>
+	</ul>
+
+	<hr/>
+
+	<a name="Check"></a>
+	<h2>1.1 - V&eacute;rification avant installation</h2>
+
+	<p>
+		Dans cette premi&egrave;re partie nous allons voir comment configurer votre serveur web pour que Cellform puisse fonctionner.
+	</p>
+
+	<p>
+		Tout d&#39;abord v&eacute;rifier que vous utilisez l'un de ces serveurs web :
+	</p>
+	<ul>
+		<li>Apache</li>
+		<li>Nginx</li>
+	</ul>
+
+	<p>
+		En effet Cellform fonctionne par defaut uniquement avec ces deux serveurs web, ceci est d&ucirc; &agrave; la n&eacute;c&eacute;ssit&eacute; d&#39;activer la r&eacute;&eacute;criture des urls, si vous voulez adapter la plateforme &agrave; un serveur non list&eacute; il vous faudra convertir le fichier .htaccess dans le format voulu.
+	</p>
+	<p>
+		Dans un second temps v&eacute;rifiez que votre version de PHP soit sup&eacute;rieure &agrave; la 5.4.0 avec l'option magic_quotes désactivée.
+	</p>
+
+	<p><a name="Start"></a></p>
+	<h2>1.2 - Lancer l&#39;installation</h2>
+
+	<p>
+		Cellform &agrave; &eacute;t&eacute; con&ccedil;u pour &ecirc;tre le plus simple d&#39;utilisation possible, y compris dans son module d&#39;installation, cependant si vous rencontrez un probl&egrave;me le manuel ci-pr&eacute;sent vous accompagne pendant tout le processus.
+	</p>
+	<p style="text-align: justify; ">
+		Pour commencer, vous devez t&eacute;l&eacute;charger l&#39;archive tar.gz &agrave; cette adresse : <a href="#">cellform.tar.gz</a> puis extraire la tarball dans votre racine web, classiquement sur linux celle-ci ce trouve dans <em><u>/var/www/</u></em>, sur windows dans <u><em>c:/wamp/www</em></u>.
+	</p>
+	<p style="text-align: justify; ">
+		Une fois l&#39;op&eacute;ration termin&eacute;e ouvrez votre navigateur web puis acc&egrave;dez au module d&#39;installation &agrave; cette adresse : <a href="#">http://localhost/install/index.php</a>, attention &agrave; ne pas omettre &quot;index.php&quot; &agrave; la fin de l&#39;url (n&#39;oubliez pas que le mod_rewrite est activ&eacute;).
+	</p>
+	<p>
+		Vous devez voir une page d&#39;introduction des plus banale, suivie de la licence GPL dans sa version 3.0.
+	</p>
+	<p>
+		Bien, &agrave; partir d&#39;ici les choses s&eacute;rieuses commencent, c&#39;est la page des pr&eacute;-requis, vous avez toutes les explications dans la section suivante [1.3].
+	</p>
+
+	<p><a name="CheckExts"></a></p>
+	<h2>1.3 - V&eacute;rification des extensions et modules</h2>
+
+	<p>
+		Liste des extensions PHP vitales :
+	</p>
+	<ul>
+		<li><a href="#">GD Image</a> - N&eacute;c&eacute;ssaire pour le traitement des images</li>
+		<li><a href="#">JSON</a>&nbsp;- N&eacute;c&eacute;ssaire pour la liaison avec l&#39;api Javascript</li>
+		<li><a href="#">SimpleXML</a> - N&eacute;c&eacute;ssaire pour la gestion des traductions</li>
+	</ul>
+	
+	<p>
+		Liste des extensions PHP non vitales :
+	</p>
+	<ul>
+		<li><a href="#">CURL</a> - N&eacute;c&eacute;ssaire uniquement si la connexion via OAuth est activ&eacute;e</li>
+	</ul>
+	
+	<p>
+		Liste des modules HTTP obligatoires :
+	</p>
+	<ul>
+		<li><a href="#">Mod_rewrite</a> - N&eacute;c&eacute;ssaire pour le bon fonctionnement du routeur.</li>
+		<li><a href="#">MySQL</a> - N&eacute;c&eacute;ssaire pour la sauvegarde des donn&eacute;es (version sup&eacute;rieur ou &eacute;gale &agrave; 4.1.0)</li>
+	</ul>
+
+	<p>
+		Si un module ou une extension requise n&#39;est pas install&eacute;e, le bouton [suivant] restera gris&eacute;.
+	</p>
+	
+	<p><a name="CheckFiles"></a></p>
+	<h2>1.3 - V&eacute;rification des droits sur les fichiers</h2>
+	
+	<p>
+		La v&eacute;rification des droits sur les fichiers fait partie du processus obligatoire lors de l&#39;installation.
+	</p>
+	
+	<p>
+		Ainsi tous les fichiers / dossiers suivants doivent &ecirc;tre en mode libre &eacute;criture (et de pr&eacute;f&eacute;rence appartenir au groupe de votre serveur web) :
+	</p>
+	<ul>
+		<li>/cache/</li>
+		<li>/config/config.conf.php</li>
+		<li>/media/img/</li>
+		<li>/media/img/min/</li>
+		<li>/media/avatars/</li>
+		<li>/images/loginbox/bg.jpg</li>
+		<li>/images/loginbox/present.jpg</li>
+		<li>/images/media/banner.png</li>
+	</ul>
+	<p>
+		Une fois ceci fait, le bouton [suivant] devient bleu, vous pouvez donc continuer votre installation.
+	</p>
+
+	<p><a name="Config"></a></p>
+	<h1><span style="color: rgb(0, 153, 255);">2 - Configuration</span></h1>
+
+	<hr/>
+	<h3>&nbsp;</h3>
+	<h3>Table des mati&egrave;res</h3>
+	<ul>
+		<li><a href="#General">2.1 - Configuration g&eacute;n&eacute;rale</a></li>
+		<li><a href="#Database">2.2 - Configuration de la base de donn&eacute;e</a></li>
+		<li><a href="#InstallTable">2.3 - Installation des tables</a></li>
+		<li><a href="#AdminSubscribe">2.4 - Configuration de l&#39;administration</a></li>
+	</ul>
+	<hr/>
+
+	<p><a name="General"></a></p>
+	<h2>2.1 - Configuration g&eacute;n&eacute;rale</h2>
+
+	<p>
+		Dans cette section rien de vraiment compliqu&eacute;, commencez par entrer le nom de votre site (je laisse libre court &agrave; votre imagination), vient ensuite le titre, une br&egrave;ve description qui sera affich&eacute;e en page de connexion, l&#39;adresse mail reserv&eacute;e a votre site (voir votre h&eacute;bergeur), la langue par defaut &agrave; utiliser et enfin la cl&eacute; de s&eacute;curit&eacute; qui doit &ecirc;tre un ensemble de chiffres et de lettres, celle-ci sera utilis&eacute;e pour renforcer le syst&egrave;me de cryptage de la plateforme.
+	</p>
+
+	<p><a name="Database"></a></p>
+	<h2>2.2 - Configuration de la base de donn&eacute;e</h2>
+
+	<p>
+		Cellform est pour l&#39;instant uniquement compatible avec MySQL (cependant son code est pr&eacute;vu pour accueillir le support des autres SGBD).
+	</p>
+	<p>
+		Vous devez donc entrer vos identifiants de connexion &agrave; votre serveur SQL ainsi que le nom de la base reserv&eacute; &agrave; la plateforme.
+	</p>
+	<p>
+		Dans le cas ou vos identifiants sont invalides, la plateforme vous signalera qu&#39;elle ne peut pas se connecter au serveur SQL.
+	</p>
+
+	<p><a name="InstallTable"></a></p>
+	<h2>2.3 - Installation des tables</h2>
+
+	<p>
+		C&#39;est &agrave; ce moment que le module d&#39;installation injecte toutes les tables dans la base de donn&eacute;e, si une erreur survient reportez vous &agrave; vos logs SQL.
+	</p>
+	<p>
+		Je pr&eacute;cise que l&#39;injection est effective uniquement si les tables ne sont pas inscrites dans la base.
+	</p>
+
+	<p><a name="AdminSubscribe"></a></p>
+	<h2>2.4 - Configuration de l&#39;administration</h2>
+
+	<p>
+		Vous pouvez maintenant vous inscrire sur le site avec les droits Administrateur (notez que cellform est con&ccedil;u pour avoir un seul admin).
+	</p>
+
+	<p>
+		Une fois ceci fait vous pouvez enfin vous connecter !
+	</p>
+	<hr/>
+	</fieldset>
+</div>
+
+<div class="footer">
+	<img alt="banner" border="0" class="logo" src="images/logo-cellform-400px.png" width="100px" />
+	<br/>
+	<span>Developpement : AntiLoxy / Design : Mars</span>
+</div>
+ 
+</body>
+</html>
+

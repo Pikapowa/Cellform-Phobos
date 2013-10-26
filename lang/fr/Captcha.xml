@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language code="fr_FR">
+
+	<!-- QUESTION -->
+	<label index="Q1">Quel est la capitale de la France ?</label>
+	<label index="Q2">De quel couleur est le cheval blanc ?</label>
+	<label index="Q3">Combien font 2 + 20 ?</label>
+	<label index="Q4">Etes vous un robot ?</label>
+	<label index="Q5">Dans "Cellform" combien y a t'il de "L" ?</label>
+	<label index="Q6">Quel est le numéro de version de l'iphone 5 ?</label>
+	<label index="Q7">Saisissez le résultat 9 multiplié par 2 ?</label>
+
+	<!-- ANSWER -->
+	<label index="A1">Paris</label>
+	<label index="A2">Blanc</label>
+	<label index="A3">22</label>
+	<label index="A4">Non</label>
+	<label index="A5">2</label>
+	<label index="A6">5</label>
+	<label index="A7">18</label>
+
+</language>

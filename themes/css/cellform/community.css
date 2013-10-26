@@ -1,0 +1,888 @@
+/*******************************************************************************
+* CellForm CSS Media Style-sheet	                                           *
+* Copyright (C) 2013 rootofgeno@gmail.com  	                                   *
+* http://milkncoffee.fr/	                                                   *
+*******************************************************************************/
+
+/*******************************************************************************
+* This program is free software: you can redistribute it and/or modify         *
+* it under the terms of the GNU General Public License as published by         *
+* the Free Software Foundation, either version 3 of the License, or            *
+* (at your option) any later version.                                          *
+*                                                                              *
+* This program is distributed in the hope that it will be useful,              *
+* but WITHOUT ANY WARRANTY; without even the implied warranty of               *
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                *
+* GNU General Public License for more details.                                 *
+*                                                                              *
+* You should have received a copy of the GNU General Public License            *
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.        *
+*******************************************************************************/
+
+@charset "utf-8";
+/**
+* Body
+*/
+
+body {
+	background-color: #FAFAFA;
+	font-family: 'Iceland', serif;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+#main {
+	margin-top:20px;
+}
+
+/**
+* Until color font classes
+*/
+.red {
+	color:red !important;
+}
+
+.green {
+	color:green !important;
+}
+
+/**
+*----------------------------------------------------------------
+*	NAV-BAR & SIDEBAR-NAV
+*----------------------------------------------------------------
+*/
+.ui-widget {
+	z-index:99999;
+}
+
+.navbar {
+	font-size: 16px;
+}
+
+.navbar-inner  {
+	filter: none;
+	z-index:99999;
+}
+
+.navbar-inverse .navbar-inner {
+	filter:none;
+	z-index:99999;
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+	background-color:#282828;
+}
+
+.dropdown-navbar {
+    border-color: #BCD4E5;
+    box-shadow: 0 2px 4px rgba(30, 30, 100, 0.25);
+    padding: 0;
+    width: 240px;
+}
+
+.dropdown-navbar .msg-title {
+    display: inline-block;
+    line-height: 14px;
+}
+
+.dropdown-navbar .msg-body {
+    display: inline-block;
+    line-height: 20px;
+    max-width: 175px;
+    vertical-align: middle;
+    white-space: normal;
+}
+
+/**
+ *	Sidebar-nav-fixed
+ */
+.navbar-form {
+	font-size:14px;
+}
+
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+.sidebar-nav-fixed {
+    position: fixed;
+    width: 21.97%;
+}
+
+@media (max-width: 767px) {
+	.sidebar-nav-fixed {
+		width: auto;
+	}
+}
+
+@media (max-width: 979px) {
+	.sidebar-nav-fixed {
+		position: static;
+		width: auto;
+	}
+}
+
+/**
+*----------------------------------------------------------------
+*	BANNER & AVATAR
+*----------------------------------------------------------------
+*/
+.avatar-frame {
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+	border:3px solid #AAAAAA;
+	box-shadow:1px 1px 0px #000000;
+	width:100px;
+	height:100px;
+}
+
+.avatar-frame.big {
+	height:150px;
+	width:auto;
+}
+
+.avatar-frame.mini {
+	width:40px;
+	height:40px;
+}
+
+.header-ban {
+	position:relative;
+	padding:40px 0;
+	color:#fff;
+	text-align:center;
+	text-shadow:0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+	background:black;
+	z-index:100;
+}
+
+.header-ban h1 {
+	font-size:80px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	line-height:1;
+}
+
+.header-ban p {
+	font-size:24px;
+	font-weight:300;
+	line-height:1.25;
+	margin-bottom:30px;
+}
+
+.header-ban a {
+	color:#fff;
+	color:rgba(255,255,255,.5);
+	-webkit-transition:all .2s ease-in-out;
+	-moz-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+}
+
+.header-ban a:hover {
+	color:#fff;
+	text-shadow:0 0 10px rgba(255,255,255,.25);
+}
+
+.header-ban .container {
+	position:relative;
+	z-index:2;
+}
+
+.header-ban:after {
+	content:'';
+	display:block;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	background:url(/images/media/banner.png);
+}
+
+/**
+*	Smart-phone
+*/
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1) {
+	.header-ban:after {
+		background-size:150px 150px;
+	}
+}
+
+@media (max-width: 480px){
+	.header-ban h1 {
+		font-size:45px;
+	}
+
+	.header-ban p,
+	.header-ban .btn {
+		font-size:18px;
+	}
+}
+
+/**
+*----------------------------------------------------------------
+*	MAIN FRAME
+*----------------------------------------------------------------
+*/
+.cellframe {
+	width:80%;
+	height:auto;
+	padding:10px;
+	margin-left:20px;
+	background-color:#FFFFFF;
+	border-left:1px solid #BBD2E1;
+	border-right:1px solid #BBD2E1;
+	border-bottom:1px solid #BBD2E1;
+	border-top:1px solid #BBD2E1;
+}
+
+.synopsis {
+	margin-left:20px;
+}
+
+/**
+*----------------------------------------------------------------
+*	MASONRY (LIST POSTS)
+*----------------------------------------------------------------
+*/
+
+/*
+ * Go Top Item
+ */
+
+#go-top {
+	display:none;
+	position:fixed;
+	right:0px;
+	bottom:0px;
+}
+
+/*
+ * Grid container
+ */
+#posts-list {
+	margin: 20px auto;
+}
+
+/*
+ * Grid items
+ */
+.container-posts
+{
+	float: left;
+	width:300px;
+	height:auto;
+	margin-bottom: 20px;
+}
+
+.cellframe-posts
+{
+	padding:2px;
+	background-color:#FFFFFF;
+	border-left:1px solid #BBD2E1;
+	border-right:1px solid #BBD2E1;
+	border-bottom:1px solid #BBD2E1;
+	border-top:1px solid #BBD2E1;
+}
+
+.cellframe-posts.footer {
+	background-color: #F0F0F0;
+}
+
+.container-posts .wrapper
+{
+	display: block;
+	margin: 0 auto;
+}
+
+.wrapper .play {
+	background:url(/images/play.png) no-repeat;
+	position: absolute;
+	left: 50%;
+	margin-top : 35px;
+	margin-left: -35px;
+	height:70px;
+	width:70px;
+}
+
+/*
+* Informations tags
+*/
+.container-posts .title {
+	color:#000000;
+	font-size:12px;
+}
+
+.container-posts .info {
+	font-weight:lighter;
+	color:#AAAAAA;
+}
+
+.container-posts .minitoolbar {
+	display:block;
+}
+
+.container-posts .score {
+	font-weight:bolder;
+	color:#AAAAAA;
+	margin-right:auto;
+}
+
+.container-posts .user {
+	color:#000000;
+	margin-left:2px;
+}
+
+/**
+*----------------------------------------------------------------
+*	INBOX
+*----------------------------------------------------------------
+*/
+
+.cellframe.mp {
+	margin-top:20px;
+}
+
+tr.newmail{
+	background-color:#FFFF66;
+}
+
+/**
+*----------------------------------------------------------------
+*	PROFIL
+*----------------------------------------------------------------
+*/
+
+.info-profil {
+	margin-left:0;
+}
+
+/**
+*----------------------------------------------------------------
+*	PERMALINK-POST [POPIN BONES]
+*----------------------------------------------------------------
+*/
+#permalink-post {
+	position:fixed;
+	top: 5%;
+	bottom: 5%;
+	left: 5%;
+	right:5%;
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	display: none;
+	overflow: hidden;
+	z-index:5000;
+	background-color:black;
+}
+
+#permalink-post .modal-body {
+	display:none;
+	padding: 0;
+	max-height: none;
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+}
+
+.modal-footer .pull-left {
+	display:inline-block;
+}
+
+#permalink-post .permalink-post-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#permalink-post .permalink-left {
+	background: black;
+	margin-right: 40%;
+	position: relative;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+#permalink-post .permalink-left img {
+	max-width:100%;
+	max-height:100%;
+	display:block;
+	margin:0 auto;
+}
+
+#permalink-post .permalink-right {
+	position: absolute;
+	top:0;
+	right:0;
+	height:100%;
+	width: 40%;
+	vertical-align: top;
+	background-color:#F0F0F0;
+	overflow:auto;
+}
+
+.permalink-close {
+	background:url(/images/close.png) no-repeat;
+	height:20px;
+	width:20px;
+	right:5%;
+	top:5%;
+	position:fixed;
+}
+
+.permalink-close:hover {
+	background-image:url(/images/close-hover.png);
+}
+
+/**
+*----------------------------------------------------------------
+*	PERMALINK-POST [POPUP BODY]
+*----------------------------------------------------------------
+*/
+
+/**
+* Toolbar left
+*/
+.permalink-post-container .toolbar-left {
+	display:none;
+}
+
+.toolbar-left .btn-download {
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+.toolbar-left .btn-fullscreen {
+	position:absolute;
+	top:23px;
+	left:0px;
+}
+
+/**
+* Right 1
+*/
+.permalink-right .right-container {
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.permalink-right .headers {
+	height:auto;
+	font-size:14px;
+	background-color:white;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	margin-top:15px;
+}
+
+.headers .avatar {
+	float:left;
+}
+
+.headers .author {
+	font-size:24px;
+	margin-left:20px;
+	color:black;
+}
+
+.headers .date {
+	margin-left:20px;
+}
+
+.headers .subheaders{
+	padding-top:10px;
+	clear:both;
+}
+
+.subheaders .score-block{
+	margin-right:10px;
+	font-size:24px;
+	color:#AAAAAA;
+}
+
+.subheaders .info {
+	text-decoration: underline;
+}
+
+/**
+* Right 2
+*/
+.permalink-right .comment-frame {
+	background-color:#F0F0F0;
+	height:auto;
+}
+
+.comment-frame textarea {
+	width:80%;
+	height:30px;
+}
+
+.comment-frame .send {
+	margin-top:15px;
+}
+
+.comment-frame .comments {
+	margin-top:20px;
+}
+
+.comments span{
+	margin-left:20px;
+}
+
+.comments .date {
+	font-size: 14px;
+}
+
+.comments .message {
+    background: none repeat scroll 0 0 #F8F8F8;
+    border-top: 1px solid #DDDDDD;
+    color: #444444;
+    margin: 4px 0;
+    min-height: 1em;
+    padding: 4px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+}
+
+/**
+* Full-screen
+*/
+#permalink-post  .permalink-fullscreen {
+	margin:0 auto;
+	width:100%;
+	height:100%;
+	display:none;
+}
+
+#permalink-post .permalink-fullscreen img {
+	margin:0 auto;
+	max-width:100%;
+	max-height:100%;
+	display:block;
+}
+
+/**
+*----------------------------------------------------------------
+*	STYLESHEET FOR SMART-PHONE & TABLETS [PERMALINK & BODY]
+*----------------------------------------------------------------
+*/
+
+@media (max-width : 767px) {
+	body {
+		padding:0;
+		overflow-x: hidden;
+	}
+
+	.navbar-fixed-top {
+		margin: 0;
+	}
+
+	#permalink-post {
+		position: relative;
+		top:0;
+		right:0;
+		left:0;
+		bottom:0;
+		margin:0;
+		width: 100%;
+		display: none;
+		max-height: none;
+		height: auto;
+		box-shadow: none;
+		border: none;
+	}
+
+	#permalink-post {
+		position: relative!important;
+		overflow-y: visible!important;
+	}
+
+	#permalink-post .modal-body {
+		height: auto;
+		max-height: none;
+		overflow: visible;
+	}
+
+	#permalink-post .permalink-post-container {
+		width: auto;
+		height: auto;
+	}
+
+	#permalink-post .permalink-left {
+		position: relative;
+		display: block;
+		width: 100%;
+		max-height: none;
+		height: auto;
+	}
+
+	#permalink-post .permalink-right {
+		position: relative;
+		display: block;
+		width: 100%;
+		max-height: none;
+		height: auto;
+		margin-right: 0;
+		padding:0px;
+	}
+
+	.permalink-close {
+		position:absolute;
+		right:0;
+		top:1.5%;
+	}
+}
+
+/**
+*----------------------------------------------------------------
+*	ICONS CUSTOMIZE
+*----------------------------------------------------------------
+*/
+
+.voted {
+    background-image: none;
+    filter: none;
+}
+
+.voted [class^="icon-"], .voted [class*=" icon-"] {
+    color: white !important;
+}
+
+.vote-up.voted {
+    background-color: #0055CC;
+}
+
+.vote-down.voted {
+    background-color: #DA4F49;
+}
+
+.change[class^="icon-"], .change [class*=" icon-"] {
+    color: black !important;
+}
+
+.change:hover {
+	color: blue !important;
+}
+
+.favoris[class^="icon-"], .favoris [class*=" icon-"] {
+    color: black !important;
+}
+
+.favoris:hover {
+	color: DeepPink !important;
+}
+
+.delete[class^="icon-"], .delete [class*=" icon-"] {
+    color: black !important;
+}
+
+.delete:hover {
+	color: red !important;
+}
+
+/**
+*----------------------------------------------------------------
+*	DIALOGBOX
+*----------------------------------------------------------------
+*/
+.DialogOverlay {
+	position:fixed;
+	top:0;
+	left:0;
+	background:rgba(0, 0, 0, 0.3);
+	display:none;
+	z-index:25000;
+}
+
+.DialogOuter {
+	background:#eee;
+	border:1px solid #fff;
+	box-shadow:0px 3px 7px #333;
+	-moz-box-shadow:0px 3px 7px #333;
+	-webkit-box-shadow:0px 3px 7px #333;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	-khtml-border-radius:4px;
+	position:absolute;
+	z-index:99999999;
+	min-width:200px;
+	min-height:50px;
+	max-width:75%;
+	position:fixed;
+	display:none;
+}
+
+.DialogInner {
+	padding:20px;
+	color:#333;
+	text-shadow:0px 1px 0px #fff;
+}
+
+.DialogInner button {
+	border:1px solid #bbb;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	-khtml-border-radius:3px;
+	background:-moz-linear-gradient(100% 100% 90deg, #eee, #d5d5d5);
+  	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#d5d5d5));
+  	background:-webkit-linear-gradient(#eee, #d5d5d5);
+    background:-o-linear-gradient(#eee, #d5d5d5);
+	color:#232d3d;
+	font-size:12px;
+	font-weight:bold;
+	padding:4px 10px;
+	margin:0 3px;
+	text-shadow:0px 1px 0px #fff;
+	cursor:pointer;
+	box-shadow:0px 1px 2px #ccc;
+	-moz-box-shadow:0px 1px 2px #ccc;
+	-webkit-box-shadow:0px 1px 2px #ccc;
+}
+
+.DialogInner button:hover {
+	color:#d85054;
+}
+
+.aButtons, .aInput {
+	margin:20px 10px 0px 10px;
+	text-align:center;
+}
+
+.aTextbox {
+	border:1px solid #aaa;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	-khtml-border-radius:4px;
+	box-shadow:0px 1px 0px #fff;
+	-moz-box-shadow:0px 1px 0px #fff;
+	-webkit-box-shadow:0px 1px 0px #fff;
+	width:180px;
+	font-size:12px;
+	font-weight:bold;
+	padding:5px 10px;
+}
+
+/**
+*----------------------------------------------------------------
+*	ERRORS AND NOTIFICATIONS TEXTS
+*----------------------------------------------------------------
+*/
+.errors {
+	color:#DC143C;
+	font-size:14px;
+}
+
+.notifications {
+	color:#000000;
+	font-size:14px;
+}
+
+/**
+* Errnos styles
+*/
+
+.errnos {
+	width:100%;
+	font-size:14px;
+	color:white;
+}
+
+.errnos .errors {
+	background-color:red;
+}
+
+.errnos .notifs {
+	background-color:green;
+}
+
+/**
+*----------------------------------------------------------------
+*	LOADING [MAIN & INFINITE SCROLL]
+*----------------------------------------------------------------
+*/
+
+.loading {
+	text-align:center;
+}
+
+.spinner {
+	background-image: url('/images/spinner.gif');
+    width: 32px;
+    height: 32px;
+    display:inline-block;
+    z-index:99999;
+}
+
+/**
+*----------------------------------------------------------------
+*	LAYOUT
+*----------------------------------------------------------------
+*/
+#overlay {
+	background-color:#000000;
+	height:100%;
+	width:100%;
+	top:0px;
+	left:0px;
+	position:fixed;
+	z-index:2500;
+	display:none;
+	filter:alpha(opacity=10) !important;
+	opacity:0.7;
+}
+
+/**
+*----------------------------------------------------------------
+*	FOR GLOBAL USED
+*----------------------------------------------------------------
+*/
+/**** Clearfix ****/
+.clearfix:before, .clearfix:after {
+	content:'';
+	display:table;
+}
+
+.clearfix:after {
+	clear:both;
+}
+
+.clearfix {
+	zoom:1;
+}
+
+a.btn-action {
+	font-size:14px;
+	color: #AAAAAA;
+}
+
+a:link 
+{ 
+ text-decoration:none; 
+}
+
+a img {
+	border:none;
+}
+
+.clear {
+	clear:both;
+}

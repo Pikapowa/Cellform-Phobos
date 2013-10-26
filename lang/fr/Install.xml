@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language code="fr_FR">
+    <label index="General_Language_Locale">fr_FR.UTF-8</label>
+    <label index="General_Language_Name">French</label>
+    <label index="General_Language_Translator">CellForm</label>
+    <label index="General_Language_OriginalName">Français</label>
+    <label index="General_Language_NotFoundException">Fichier introuvable.</label>
+
+	<!-- GENERAL -->
+	<label index="General_Next">Suivant</label>
+	<label index="General_Save">Enregistrer</label>
+	<label index="General_Ok">Ok</label>
+	<label index="General_Error">Erreur</label>
+	<label index="General_Missing">Manquant</label>
+	<label index="General_Status">Statut</label>
+
+	<!-- HEADERS.TPL - MENU -->
+	<label index="General_Title">CellForm - Installation -</label>
+	<label index="General_Intro">Introduction</label>
+	<label index="General_Licence">Licence</label>
+	<label index="General_Required">Prérequis</label>
+	<label index="General_ConfigMain">Configuration générale</label>
+	<label index="General_ConfigDb">Configuration base de donnée</label>
+	<label index="General_ConfigAdmin">Configuration de l'administration</label>
+	<label index="General_Install">Installation</label>
+	<label index="General_InstallFinish">Installation terminée</label>
+
+	<!-- INTRO.TPL -->
+	<label index="Intro_Content">Bienvenue sur Cellform, la nouvelle plateforme sociale destinée aux partages d'images et de vidéos.
+	CellForm est un logiciel gratuit et libre de droit, présenté ici dans sa version 1.0.
+	Le principe est simple, les utilisateurs upload des images ou des vidéos ayant un rapport
+	thématique ou non, puis expriment leurs votes et commentaires sur les postes.
+	Vous pouvez voir à tout moment qui à voté pour vos billets et ainsi savoir qui s'intéresse au même sujet que vous.
+	Je vous laisse à présent le soin de continuer dans ce système d'installation
+	et découvrir par vous même le concept de CellForm.</label>
+	<label index="ViewDoc">Voir la documentation</label>
+
+	<!-- LICENCE.TPL -->
+	<label index="Licence_AcceptTerms">J'accepte les conditions</label>
+
+	<!-- REQUIRED.TPL -->
+	<label index="Config_Php">Configuration de PHP</label>
+	<label index="Required_phpversion">Version de PHP >= 5.4.0</label>
+
+	<label index="Extensions_Php">Extensions PHP</label>
+	<label index="Required_gd">Librairie GD Image</label>
+	<label index="Required_json">Librairie JSON</label>
+	<label index="Required_simplexml">Librairie SimpleXML</label>
+	
+	<label index="Extensions_Opt_Php">Extensions PHP non requises</label>
+	<label index="Required_curl">Librairie CURL</label>
+
+	<label index="Extensions_Database">Bases de données supportées</label>
+	<label index="Required_mysql">MySQL</label>
+
+	<label index="Modules_Http">Modules Apache obligatoires </label>
+	<label index="Required_mod_rewrite">Mod_rewrite</label>
+
+	<label index="Files_Check">Fichiers et répertoires</label>
+
+	<!-- CONFIG_MAIN.TPL -->
+	<label index="ConfigMain_SiteName">Nom du site*</label>
+	<label index="ConfigMain_SiteTitle">Titre du site*</label>
+	<label index="ConfigMain_SiteDescription">Description du site*</label>
+	<label index="ConfigMain_SiteEmail">Email du site*</label>
+	<label index="ConfigMain_SiteKey">Clé de sécurité (Salt)*</label>
+	<label index="ConfigMain_SiteLang">Langue du site*</label>
+	<label index="ConfigMain_PicturePresent">Image de présentation (jpg)</label>
+	<label index="ConfigMain_PictureBg">Image de fond (jpg)</label>
+	<label index="ConfigMain_PictureBanner">Bannière (png)</label>
+	<label index="ConfigMain_OAuthConnect">OAuth 2.0 Connexion (laissez à default pour désactivé cette option)</label>
+	<label index="ConfigMain_OAuthAppID">Application ID OAuth</label>
+	<label index="ConfigMain_OAuthSecretKey">Clé secrète OAuth</label>
+
+	<label index="ConfigMain_SiteNameMore">Définissez le nom de votre site. (Max. 20 caractères)</label>
+	<label index="ConfigMain_SiteTitleMore">Définissez le titre de votre site. (Max. 64 caractères)</label>
+	<label index="ConfigMain_SiteDescriptionMore">Définissez une description de votre site. (Max. 128 caractères)</label>
+	<label index="ConfigMain_SiteEmailMore">Définissez une adresse mail réservée au site.</label>
+	<label index="ConfigMain_SiteKeyMore">Plus cette clée est complexe plus la sécurité de vos mots de passe sera renforcée, (Max. 10 caractères)</label>
+	<label index="ConfigMain_SiteLangMore">Indiquez votre langue dans le format suivant : fr, en.</label>
+	<label index="ConfigMain_PicturePresentMore">Définissez une bannière pour la page de présentation. (Min. 480x0)</label>
+	<label index="ConfigMain_PictureBgMore">Définissez une image de fond pour la page de présentation. (Aucune restriction de taille)</label>
+	<label index="ConfigMain_PictureBannerMore">Définissez une bannière pour la page de principale. (Aucune restriction de taille)</label>
+	<label index="ConfigMain_MoreOAuthAppID">Définissez le AppID de votre compte developpeur compatible OAuth.</label>
+	<label index="ConfigMain_MoreOAuthSecretKey">Définissez la clée secrète de votre compte developpeur compatible OAuth.</label>
+
+	<!-- CONFIG_DB.TPL -->
+	<label index="ConfigDb_Hostname">Nom de l'hote*</label>
+	<label index="ConfigDb_Name">Nom de la base*</label>
+	<label index="ConfigDb_User">Nom d'utilisateur*</label>
+	<label index="ConfigDb_Password">Mot de passe*</label>
+	<label index="ConfigDb_HostnameMore">Adresse du serveur SQL. (Max. 30 caractères; Example : localhost)</label>
+	<label index="ConfigDb_NameMore">Définissez le nom de la base dédiée à votre site. (Max. 30 caractères)</label>
+	<label index="ConfigDb_UserMore">Définissez le login de votre base. (Max. 30 caractères)</label>
+	<label index="ConfigDb_PasswordMore">Définissez le mot de passe de votre base. (Max. 30 caractères)</label>
+
+	<label index="Install_CreateTable">Création des tables et insertions</label>
+	<label index="Required_installquery">Injection des tables SQL</label>
+
+	<!-- CONFIG_ADMIN.TPL -->
+	<label index="ConfigAdmin_Email">Email*</label>
+	<label index="ConfigAdmin_Username">Nom d'utilisateur*"</label>
+	<label index="ConfigAdmin_Password">Mot de passe*</label>
+	<label index="ConfigAdmin_PasswordConfirm">Mot de passe (confirmation)*</label>
+	<label index="ConfigAdmin_EmailMore">Définissez votre email au format suivant : email@example.com. (Max. 30 caractères)</label>
+	<label index="ConfigAdmin_UsernameMore">Définissez un nom d\'utilisateur (Max. 12 caractères)</label>
+	<label index="ConfigAdmin_PasswordMore">Définissez votre mot de passe. (Max. 30 caractères)</label>
+	<label index="ConfigAdmin_PasswordConfirmMore">Confirmation de votre mot de passe. (Max. 30 caractères)</label>
+
+	<!-- END_INSTALL.TPL -->
+	<label index="InstallFinish_Congratulation">Félicitation, votre installation est terminée.</label>
+	<label index="InstallFinish_Warning">ATTENTION ! VEILLEZ BIEN A SUPPRIMER LE REPERTOIRE "INSTALL" DE LA RACINE DE VOTRE SITE !</label>
+	<label index="InstallFinish_Connect">Connectez-vous</label>
+
+</language>

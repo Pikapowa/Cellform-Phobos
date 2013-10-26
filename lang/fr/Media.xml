@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language code="fr_FR">
+    <label index="General_Language_Locale">fr_FR.UTF-8</label>
+    <label index="General_Language_Name">French</label>
+    <label index="General_Language_Translator">CellForm</label>
+    <label index="General_Language_OriginalName">Français</label>
+    <label index="General_Language_NotFoundException">Fichier introuvable.</label>
+
+	<!-- GENERAL -->
+	<label index="General_Pseudo">Pseudo</label>
+	<label index="General_AcceptedChar">Les caractères acceptés sont : a-z,A-Z,0-9,_,@,#,-,%</label>
+	<label index="General_Send">Envoyer</label>
+	<label index="General_Modify">Modifier</label>
+	<label index="General_Score">Score</label>
+	<label index="General_Profil">Profil</label>
+	<label index="General_Username">Nom d'utilisateur</label>
+	<label index="General_Delete">Supprimer</label>
+	<label index="General_Select">Selectionner</label>
+	<label index="General_Title">Titre</label>
+	<label index="General_Date">Date</label>
+	<label index="General_Author">Auteur</label>
+	<label index="General_On">sur</label>
+	<label index="General_Comments">Commentaires</label>
+	<label index="General_Description">Description</label>
+	<label index="General_Return">Retour</label>
+	<label index="General_ReturnAccount">Retour à mon compte</label>
+
+	<!-- HEADERS.TPL - MENU -->
+    <label index="General_Loading">Merci de patienter pendant le chargement de la page</label>
+	<label index="General_NewMp">Nouveau(x) message(s)</label>
+    <label index="General_Home">Accueil</label>
+    <label index="General_Ranking">Classement</label>
+    <label index="General_Members">Membres</label>
+	<label index="General_Search">Recherche</label>
+    <label index="General_MyAccount">Mon compte</label>
+	<label index="General_MyFavorites">Mes favoris</label>
+	<label index="General_MyMailBox">Ma messagerie</label>
+	<label index="General_MyFriends">Mes amis</label>
+	<label index="General_MyModifTickets">Modifier mes billets</label>
+	<label index="General_MyNotifications">Mes notifications</label>
+	<label index="General_Administration">Administration</label>
+	<label index="General_Logout">Déconnexion</label>
+	<label index="General_MyTickets">Mes billets</label>
+	<label index="General_SearchUser">Rechercher un utilisateur</label>
+	<label index="General_SearchTicket">Rechercher un billet</label>
+
+	<!-- ADDHEADERS.TPL -->
+	<label index="AddPost_ShareVideo">Ajoute une vidéo</label>
+	<label index="AddPost_ShareImage">Ajoute une image</label>
+	<label index="AddPost_ShareLink">Ajoute un lien</label>
+	<label index="AddPost_Title">Titre du billet (max. 30 caractères) :</label>
+	<label index="AddPost_Description">Description (max. 2048 caractères) :</label>
+
+	<!-- ADDIMAGE.TPL -->
+	<label index="AddPostImage_LoadImage">Charger votre image (JPG, PNG ou GIF | max. 1.2Mo) :</label>
+
+	<!-- ADDPOST_VIDEO.TPL -->
+	<label index="AddPostVideo_Add">Ajout d'une vidéo</label>
+	<label index="AddPostVideo_Url">Entrer l'adresse de la vidéo :</label>
+	<label index="AddPostVideo_MoreUrl">Services acceptés : Youtube; Rutube; Vimeo; Wat.tv; Dailymotion.</label>
+
+	<!-- ADDLINK.TPL -->
+	<label index="AddPostLink_Url">Entrer l'adresse du lien :</label>
+
+	<!-- ACCOUNT.TPL -->
+	<label index="Account_Welcome">Bienvenue sur votre compte</label>
+	<label index="Account_MyAccount">Mon compte</label>
+	<label index="Account_NbInbox">message(s) non lu(s)</label>
+	<label index="Account_Activity">Activités</label>
+	<label index="Account_Rules">Consuler les règles</label>
+	<label index="Account_Email">Email*</label>
+	<label index="Account_EnterEmail">example@email.com</label>
+	<label index="Account_MoreEmail">Pour changer votre email, vérifier votre mot de passe.</label>
+	<label index="Account_Password">Mot de passe*</label>
+	<label index="Account_EnterPassword">Entrer mot de passe</label>
+	<label index="Account_ChangePassword">Changer votre mot de passe</label>
+	<label index="Account_PasswordConfirm">Confirmer</label>
+	<label index="Account_EnterPasswordConfirm">Entrer mot de passe (confirmation)</label>
+	<label index="Account_LoadAvatar">Charger votre image de profil (JPG, max. 1.2Mo, max. 200x200) :</label>
+	<label index="Account_MoreLoadAvatar">Le mot de passe est non requis pour changer votre image de profil</label>
+	<label index="Account_Administrator">Administration</label>
+
+	<!-- CHANGE_PASSWD.TPL -->
+	<label index="ChangePasswd_New">Nouveau mot de passe*</label>
+	<label index="ChangePasswd_NewConfirm">Confirmer votre nouveau mot de passe*</label>
+	<label index="ChangePasswd_MoreNew">Max. 30 caractères</label>
+	<label index="ChangePasswd_MorePassword">Choisissez un nouveau mot de passe !</label>
+	<label index="ChangePasswd_EnterNewPassword">Entrer nouveau mot de passe</label>
+	
+	<!-- CHANGE.TPL -->
+	<label index="Change_Modify">Modification du billet</label>
+	
+	<!-- POSTS.TPL -->
+	<label index="Posts_PostedAt">Posté le</label>
+	<label index="Posts_Comments">Nombres de commentaire(s)</label>
+	
+	<!-- PERMALINK-POST.TPL -->
+	<label index="Permalink_Download">Télécharger</label>
+	<label index="Permalink_Fullscreen">Plein écran</label>
+	<label index="Permalink_Alert">Alerte</label>
+	<label index="Permalink_AlertMore">Ce billet est inapproprié</label>
+	<label index="Permalink_Favorite">Favoris</label>
+	<label index="Permalink_FavoriteMore">Ajoute ce billet à tes favoris</label>
+	<label index="Permalink_Link">Liens</label>
+	<label index="Permalink_LinkMore">Récupère l'url du billet</label>
+	<label index="Permalink_CommentPlaceholder">Ajoute un commentaire</label>
+	
+	<!-- PROFIL.TPL -->
+	<label index="Profil_Of">Profil de</label>
+	<label index="Profil_SendPm">Envoyer un message</label>
+	<label index="Profil_AddFriends">Ajouter aux amis</label>
+	<label index="Profil_Notifications">Notifications</label>
+	<label index="Profil_Rank">Rang</label>
+	<label index="Profil_RegisterDate">Date d'inscription</label>
+	<label index="Profil_SigninDate">Date de la dernière connexion</label>
+	<label index="Profil_NbLike">Nombre de like reçu</label>
+	<label index="Profil_NbComments">Nombre de commentaires postés</label>
+	<label index="Profil_NbTickets">Nombre de tickets postés</label>
+
+	<!-- RANK -->
+	<label index="Rank_Noob">Nouvelle recrue</label>
+	<label index="Rank_AsPaladin">Aspirant Paladin</label>
+	<label index="Rank_Paladin">Paladin</label>
+	<label index="Rank_Master">Maitre</label>
+	<label index="Rank_GrandMaster">Grand Maitre</label>
+	<label index="Rank_Priest">Prêtre</label>
+	<label index="Rank_GrandPriest">Grand Prêtre</label>
+	<label index="Rank_As">As</label>
+
+	<!-- MEMBERS.TPL -->
+	<label index="Members">Membres</label>
+	<label index="Members_Search">Rechercher un membre</label>
+
+	<!-- MAIL.TPL -->
+	<label index="Mail">Messagerie</label>
+	<label index="Mail_Inbox">Boite de reception</label>
+	<label index="Mail_Delete">Supprimer message(s)</label>
+	
+	<!-- MAIL_BODY.TPL -->
+	<label index="MailBody_PmReply">Repondre</label>
+	<label index="MailBody_PmOf">Message de</label>
+
+	<!-- MAIL_SEND.TPL -->
+	<label index="MailSend_Receiver">Destinataire</label>
+	<label index="MailSend_Subject">Sujet</label>
+	<label index="MailSend_Message">Message</label>
+
+	<!-- NOTIFICATIONS.TPL -->
+	<label index="Notifications">Notifications</label>
+	<label index="Notifications_Top10Votes">Les 10 derniers votes</label>
+	<label index="Notifications_Top20Votes">Les 20 derniers votes</label>
+	<label index="Notifications_AllVotes">Tous les votes</label>
+	<label index="Notifications_Top10Comments">Les 10 derniers commentaires</label>
+	<label index="Notifications_Top20Comments">Les 20 derniers commentaires</label>
+	<label index="Notifications_AllComments">Tous les commentaires</label>
+	<label index="Notifications_CommentOf">a commenté un billet de</label>
+	<label index="Notifications_Voted">a voté</label>
+	<label index="Notifications_Commented">a commenté</label>
+	<label index="Notifications_Votes">Votes</label>
+	<label index="Notifications_Voteup">positivement</label>
+	<label index="Notifications_Votedown">négativement</label>
+
+</language>

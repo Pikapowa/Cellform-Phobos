@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language code="fr_FR">
+    <label index="General_Language_Locale">fr_FR.UTF-8</label>
+    <label index="General_Language_Name">French</label>
+    <label index="General_Language_Translator">CellForm</label>
+    <label index="General_Language_OriginalName">Français</label>
+    <label index="General_Language_NotFoundException">Fichier introuvable.</label>
+	<label index="General_PasswordIncorrect">Mot de passe incorrecte !</label>
+	<label index="General_PasswordNoMatch">Les mots de passe doivent correspondre !</label>
+	<label index="General_AlreadyAdd">Déjà ajouté</label>
+	<label index="General_AlreadySend">Déjà envoyé(e)</label>
+	<label index="General_Deleted">Supprimé(s) !</label>
+	<label index="General_Error">Erreur !</label>
+	<label index="General_UserNotFound">Utilisateur non trouvé !</label>
+
+	<!-- NOTIFICATIONS INSTALL -->
+	<label index="Error_MySqlConnect">Connexion SQL : erreur.</label>
+	<label index="MySql_Ok">Requête SQL exécuté avec succés.</label>
+
+	<!-- NOTIFICATIONS GENERAL -->
+	<!-- LOGINBOX -->
+	<label index="OAuth_Inactive">Connexion avec les systèmes OAuth désactivées.</label>
+	<label index="Login_Failure">Email ou mot de passe incorrect ! Votre compte est-il validé ?</label>
+	<label index="SignUp_AlreadyExist">Déjà inscrit ! Changer votre email ou pseudo.</label>
+	<label index="SignUp_CreateWithoutConfirm">Inscription acceptée ! Cependant aucun mail de confirmation à été envoyé.</label>
+	<label index="SignUp_CreateWithConfirm">Inscription acceptée ! Veuillez confirmer par email.</label>
+	<label index="Recovery_Error">Echec du changement de mot de passe.</label>
+	<label index="Recovery_Success">Votre nouveau mot de passe à été envoyé par mail.</label>
+	<label index="Validator_Error">Compte déjà validé ou session invalide !</label>
+	<label index="Validator_Success">Votre compte est validé !</label>
+	<label index="OAuth_Signup">Inscription acceptée ! Vous pouvez vous connecter.</label>
+
+	<!-- FRIEND -->
+	<label index="Friend_Added">Ajouté aux amis</label>
+	<label index="Friend_AlreadyAdd">Déjà amis</label>
+
+	<!-- FAVORITES -->
+	<label index="Favorite_Added">Ajouté aux favoris</label>
+
+	<!-- ALERT -->
+	<label index="Alert_Send">Alerte envoyé !</label>
+
+	<!-- POST -->
+	<label index="Post_VoteAccepted">Vote accepté !</label>
+	<label index="Post_AlreadyVoted">Vous avez déjà voté !</label>
+	<label index="Post_VideoNotMatch">Respectez les formats urls des services vidéos !</label>
+	<label index="Post_Error">Erreur</label>
+	<label index="Post_NotSend">Aucune modification ou envoi du billet.</label>
+	<label index="Post_Online">Votre billet est en ligne !</label>
+	<label index="Post_Modified">Votre billet est modifié !</label>
+	
+	<!-- ACCOUNT -->
+	<label index="Account_NotChange">Erreur lors du changement, vérifier votre mot de passe.</label>
+	<label index="Account_EmailAlreadyExist">E-mail déjà enregistrée !</label>
+	<label index="Account_EmailChanged">Votre adresse e-mail à été changée ! Merci de vous re-connectez.</label>
+	<label index="Account_NotFound">Compte introuvable ! Changer votre email ou pseudo.</label>
+	<label index="Account_AvatarChanged">Image de profile changé !</label>
+	<label index="Account_PasswordChanged">Votre mot de passe à été changé !</label>
+
+	<label index="Account_RequestPasswordSend">Un mail de confirmation vient de vous être envoyé.</label>
+
+	<!-- MP_SEND.TPL -->
+	<label index="Mp_Send">Votre message à été envoyé !</label>
+	<label index="Mp_NotSend">Votre message n'à pas été envoyé !</label>
+
+	<!-- ADMIN -->
+	<label index="Admin_ConfPicturePresentChanged">Votre image de présentation vient d'être modifiée !</label>
+	<label index="Admin_ConfPictureBgChanged">Votre image de fond vient d'être modifiée !</label>
+	<label index="Admin_ConfPictureBannerChanged">Votre banniere vient d'être modifiée !</label>
+	<label index="Admin_ConfChanged">La configuration de votre site à été changé.</label>
+
+	<label index="Admin_UserDeleted">Utilisateur supprimé !</label>
+
+	<!-- ERRORS INSTALL -->
+	<label index="Error_MysqlReqFail">Erreur de requêtes SQL.</label>
+	<label index="Error_FileOpen">Erreur d'ouverture du fichier.</label>
+	<label index="Error_FileWrite">Erreur d'écriture du fichier.</label>
+	<label index="Error_FileNoExist">Le fichier est introuvable.</label>
+	<label index="Error_FileConfig">Fichier de configuration déjà créer, veuillez restaurer config.php.</label>
+
+	<!-- ERRORS GENERAL -->
+	<label index="Error_FileUpload">Erreur de chargement, fichier trop gros ou mauvaise extension ou encore mauvais ratio.</label>
+	<label index="Error_DenyChar">Caractères non autorisés ou format incorrect !</label>
+	<label index="Error_MailDisable">Fonction mail désactivée !</label>
+	<label index="Error_Session">Session invalide !</label>
+	<label index="Error_CSRF">Session invalide ou temps dépassé !</label>
+	<label index="Error_Failure">Echec !</label>
+
+	<!-- ERRORS IMAGE MANIPULATION -->
+	<label index="Error_ImageBadRatio">Votre image à un ratio trop faible !</label>
+	<label index="Error_ImageBadSize">Votre image n'est pas aux bonnes dimensions !</label>
+
+	<!-- ERRORS UPLOAD FILE -->
+	<label index="Error_FileUploadSize">Erreur de chargement, fichier trop gros !</label>
+	<label index="Error_FileUploadExts">Erreur de chargement, mauvaise extension !</label>
+	<label index="Error_FileUpload1">Le fichier téléchargé excède la taille maximum configurée dans php.ini.</label>
+	<label index="Error_FileUpload2">Le fichier téléchargé excède la taille spécifiée dans le formulaire HTML.</label>
+	<label index="Error_FileUpload3">Le fichier n'a été que partiellement téléchargé.</label>
+	<label index="Error_FileUpload4">Aucun fichier n'a été téléchargé.</label>
+	<label index="Error_FileUpload5">Un dossier temporaire est manquant.</label>
+	<label index="Error_FileUpload6">Échec de l'écriture du fichier sur le disque.</label>
+	<label index="Error_FileUpload7">Une extension PHP a arrêté l'envoi de fichier.</label>
+	<label index="Error_FileUploadNotMoved">Impossible de déplacer le fichier vers le nouvel emplacement.</label>
+
+	<!-- INPUT VALIDATION -->
+	<label index="Validate_Csrf">Csrf erreur !</label>
+	<label index="Validate_MinLen">Chaine de caractères trop courte !</label>
+	<label index="Validate_Required">Champ(s) manquant(s) ! (Voir les balises [?])</label>
+	<label index="Validate_Email">Le format de l'adresse e-mail n'est pas respecté !</label>
+	<label index="Validate_MaxLen">Chaine de caractères trop longue !</label>
+	<label index="Validate_AlphaNumeric">Caractères non autorisés !</label>
+	<label index="Validate_Numeric">Valeur numérique attentue !</label>
+	<label index="Validate_Captcha">Répondez correctement à la question !</label>
+	<label index="Validate_Url">Respectez le format URL !</label>
+
+</language>

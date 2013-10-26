@@ -1,0 +1,354 @@
+/*******************************************************************************
+* CellForm CSS Login Style-Sheet	                                           *
+* Copyright (C) 2013 rootofgeno@gmail.com  	                                   *
+* http://milkncoffee.fr/	                                                   *
+*******************************************************************************/
+
+/*******************************************************************************
+* This program is free software: you can redistribute it and/or modify         *
+* it under the terms of the GNU General Public License as published by         *
+* the Free Software Foundation, either version 3 of the License, or            *
+* (at your option) any later version.                                          *
+*                                                                              *
+* This program is distributed in the hope that it will be useful,              *
+* but WITHOUT ANY WARRANTY; without even the implied warranty of               *
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                *
+* GNU General Public License for more details.                                 *
+*                                                                              *
+* You should have received a copy of the GNU General Public License            *
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.        *
+*******************************************************************************/
+
+@charset 'utf-8';
+/**
+* Body
+*/
+body {
+	width:100%;
+	height:100%;
+	background-color:black;
+	overflow-y:visible;
+}
+
+/**
+*----------------------------------------------------------------
+*	BACKGROUND
+*----------------------------------------------------------------
+*/
+
+#bg {
+	position:absolute; 
+	height:100%;
+	width:100%;
+	left:0;
+	right:0;
+	bottom:0;
+	top:0;
+	overflow:hidden;
+	z-index:0;
+}
+
+#bg img {
+	width:100%;
+	min-width:100%;
+	min-height:100%;
+}
+
+/**
+* Background fading
+*/
+.modal-backdrop {
+	-webkit-opacity:0.3;
+	-moz-opacity:0.3;
+	-ms-filter:"alpha(opacity=30)";
+	filter:alpha(opacity=30);
+	opacity:0.3;
+}
+
+/**
+*----------------------------------------------------------------
+*	LOGINBOX [MENU]
+*----------------------------------------------------------------
+*/
+.links {
+	text-align:center;
+	padding:5px 0.5em;
+}
+
+.links > a {
+	white-space:nowrap;
+}
+
+.links > a + a {
+	margin-left:0.25em;
+	padding-left:0.5em;
+	border-left:1px solid #ccc;
+}
+
+/*
+* Smart-phone
+*/
+@media (max-width : 480px), (max-height: 480px) {
+	.links > a {
+		display:block;
+	}
+
+	.links > a + a {
+		border-left:none;
+		padding-left:0;
+		margin-top:5px;
+	}
+}
+
+/**
+*----------------------------------------------------------------
+*	LOGINBOX
+*----------------------------------------------------------------
+*/
+#modal-title {
+	text-align:center;
+}
+
+#modal-recovery {
+	text-align:center;
+}
+
+#modal-login {
+	border-radius:0;
+	width:480px;
+	margin-left:-240px;
+	overflow:hidden;
+	position:absolute;
+}
+
+#modal-login .modal-header .tenant-image {
+	margin:9px -15px 9px -15px;
+}
+
+#modal-login .modal-footer { /* display : none; */
+	padding:7px 15px;
+}
+
+#modal-login .modal-body {
+	position:relative;
+	padding:0;
+}
+
+#modal-login #tenant-forms {
+	background:#eee;
+	margin-top:0;
+	margin-bottom:0;
+	width:100%;
+	padding:0;
+	margin:0;
+	border-top:1px solid #ccc;
+	position:relative;
+	height:280px;
+	overflow:auto;
+}
+
+#modal-login #tenant-forms-center {
+	background: #eee;
+	border-top: 1px solid #ccc;
+	text-align: center;
+	width: 100%;
+}
+
+#modal-login #tenant-forms form {
+	margin-bottom:0;
+	padding:7px 20px;
+}
+
+#modal-login .form-nav {
+	padding: 1em 20px 7px 20px;
+	text-align: center;
+}
+
+/**
+* Social Network Service
+*/
+#modal-login #login-with-sns {
+	text-align:center;
+	margin-bottom:15px;
+}
+
+#modal-login form h3 {
+	text-align:center;
+	margin-bottom:15px;
+}
+
+#modal-login .form-bigbutton {
+	text-align:center;
+}
+
+#modal-login .form-bigbutton .btn {
+	margin-top:5px;
+	padding-top:10px;
+	padding-bottom:10px;
+	width:75%;
+	font-size:110%;
+}
+
+#modal-login #login-with-sns {
+	padding-bottom:1em;
+	margin-top:0;
+	border-bottom:2px solid #ccc;
+}
+
+#modal-login #login-with-sns .btn {
+	width:40%;
+}
+
+/**
+*----------------------------------------------------------------
+*	SMART-PHONE [LOGINBOX]
+*----------------------------------------------------------------
+*/
+@media ( max-width : 480px ), ( max-height: 480px ) {
+	html {
+		width:auto;
+		overflow:auto;
+		height:auto;
+	}
+
+	body {
+		overflow:auto;
+		width:auto;
+		height:auto;
+		padding:0;
+	}
+
+	.content {
+		font-size:12px;
+	}
+
+	#header,#bg {
+		margin:0 -7px;
+	}
+
+	#header {
+		margin-bottom:7px;
+	}
+
+	#modal-login {
+		position:relative;
+		top:0;
+		left:7px;
+		right:7px;
+		margin:0 !important;
+		min-height:480px;
+		max-height:none;
+		height:auto;
+		width:auto;
+		min-height:100%;
+	}
+
+	#background-image {
+		display:none;
+	}
+
+	#modal-login .modal-body .row-fluid {
+		height:auto;
+	}
+
+	#modal-login .modal-body {
+		max-height:none !important;
+		height:auto;
+	}
+
+	#modal-login .container-fluid {
+		height:auto;
+	}
+
+	#modal-login .container-fluid>.content {
+		margin:0;
+	}
+
+	#modal-login .container-fluid>.sidebar {
+		position:relative;
+		height:auto;
+		width:100%;
+	}
+
+	#modal-login .modal-body .container-fluid {
+		min-height:100%;
+	}
+
+	#modal-login #tenant-forms {
+		height:auto;
+	}
+
+	body.modal-open .modal.in {
+		/* position: absolute !important; */
+		position:relative !important;
+		top:0 !important;
+		left:0 !important;
+		margin:0 !important;
+		/* height:100%!important; */
+		height:auto !important;
+		width:100% !important;
+		overflow-y:auto !important;
+		overflow-x:hidden !important;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-ms-box-sizing:border-box;
+		box-sizing:border-box;
+
+		border:none;
+	}
+
+	#modal-login #login-with-sns .btn {
+		width:75%;
+	}
+}
+
+@media ( max-width : 480px ), ( max-height: 480px ) {
+	/**
+	* Android
+	*/
+	html, body {
+		width:auto;
+		height:auto;
+		overflow:visible;
+		max-height:none;
+		max-width:none;
+	}
+
+	body.modal-open {
+		padding:0!important;
+	}
+
+	body.modal-open>* {
+		display:none;
+	}
+
+	#modal-login {
+		width:auto;
+		margin:0;
+		overflow:visible;
+	}
+
+	body.modal-open >.modal.in, .modal-body {
+		position:relative!important;
+		top:0!important;
+		left:0!important;
+		margin:0!important;
+
+		display:block!important;
+		box-sizing:border-box!important;
+		height:auto!important;
+		width:100%!important;
+		max-height:none!important;
+		max-width:none!important;
+
+		border:none!important;
+
+		-webkit-box-shadow: none!important;
+		box-shadow: none!important;
+	}
+
+	#modal-login #tenant-forms {
+		height:auto;
+		overflow:visible;
+	}
+}
