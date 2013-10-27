@@ -237,8 +237,9 @@
 
 		$.ajax({
 			url: masonry_url,
-			dataType: 'json',
+			type: 'GET',
 			data: {page: page},
+			dataType: 'json',
 			success: Cellform.prototype.OnLoadPosts
 		}).fail(function()
 		{
@@ -435,7 +436,7 @@
 			scroll_y 	= $(document).scrollTop();
 			post_id 	= $(this).attr('rel');
 			params 		= {
-				'id' : post_id,
+				'id' : post_id
 			};
 
 			// LOAD JSON DATA FROM POSTINFO
@@ -547,7 +548,7 @@
 
 				params = {
 					'id' : post_id,
-					'message' : message,
+					'message' : message
 				};
 
 				_self.api('addcomment', params).then(function(res)
@@ -643,7 +644,7 @@
 
 			var params = {
 				'id' : id,
-				'vote' : vote,
+				'vote' : vote
 			};
 
 			_self.api('postsvote', params).then(function(res)
@@ -693,7 +694,7 @@
 
 			var params = {
 				'id' : id,
-				'vote' : vote,
+				'vote' : vote
 			};
 
 			_self.api('comsvote', params).then(function(res)
@@ -795,7 +796,7 @@
 	{
 		var _self = this;
 		var params = {
-			'user' : user,
+			'user' : user
 		};
 
 		_self.api('addfriend', params).then(function(res)
@@ -821,7 +822,7 @@
 		nodes = _self.DelNodes();
 
 		var params = {
-			'nodes' : nodes,
+			'nodes' : nodes
 		};
 
 		_self.api('delfriend', params).then(function(res)
@@ -844,7 +845,7 @@
 		nodes = _self.DelNodes();
 
 		var params = {
-			'nodes' : nodes,
+			'nodes' : nodes
 		};
 
 		_self.api('delmp', params).then(function(res)
@@ -863,7 +864,7 @@
 	{
 		var _self = this;
 		var params = {
-			'id' : id,
+			'id' : id
 		};
 
 		_self.DialogBox(translations.Delete + ' ?', {confirm: true}, function()
@@ -1019,7 +1020,7 @@
 			'textOk' : 'Ok',
 			'textCancel' : 'Cancel',
 			'textYes' : 'Yes',
-			'textNo' : 'No',
+			'textNo' : 'No'
 		}
 
 		if (args)
@@ -1184,7 +1185,7 @@
 			nodes = _self.DelNodes();
 
 			var params = {
-				'nodes' : nodes,
+				'nodes' : nodes
 			};
 
 			_self.api('delalerts', params);
@@ -1215,7 +1216,7 @@
 			}
 
 			var params = {
-				'nodes' : nodes,
+				'nodes' : nodes
 			};
 
 			_self.api('delalerts', params);
@@ -1237,7 +1238,7 @@
 		_self.DialogBox(translations.Delete + ' ?', {confirm: true}, function()
 		{
 			var params = {
-				'id' : id,
+				'id' : id
 			};
 
 			_self.api('delcomment', params).then(function(res)
@@ -1279,7 +1280,7 @@
 					login: params.login,
 					password: params.password
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1302,7 +1303,7 @@
 					sex: params.sex,
 					captcha: params.captcha
 				}),
-				dataType: 'json',
+				dataType: 'json'
 			});
 		},
 	   /*!
@@ -1320,7 +1321,7 @@
 				data : CleanParams({
 					email: params.email
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1335,7 +1336,7 @@
 			return $.ajax({
 				url : WEB_ROOT + 'captcha/defaults/captchajson',
 				type: 'GET',
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 		/* MEDIA */
@@ -1352,9 +1353,9 @@
 				url : WEB_ROOT + 'media/ticket/postinfo',
 				type: 'POST',
 				data: CleanParams({
-					id: params.id,
+					id: params.id
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1370,9 +1371,9 @@
 				url : WEB_ROOT + 'media/comment/getcomments',
 				type: 'POST',
 				data: CleanParams({
-					id: params.id,
+					id: params.id
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1389,9 +1390,9 @@
 				type: 'POST',
 				data: CleanParams({
 					id: params.id,
-					message: params.message,
+					message: params.message
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1408,9 +1409,9 @@
 				type: 'GET',
 				data: CleanParams({
 					id: params.id,
-					vote: params.vote,
+					vote: params.vote
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1427,9 +1428,9 @@
 				type: 'GET',
 				data: CleanParams({
 					id: params.id,
-					vote: params.vote,
+					vote: params.vote
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1444,7 +1445,7 @@
 			return $.ajax({
 				url : WEB_ROOT + 'media/users/userlist',
 				type: 'GET',
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1459,7 +1460,7 @@
 			return $.ajax({
 				url : WEB_ROOT + 'media/ticket/postlist',
 				type: 'GET',
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1475,9 +1476,9 @@
 				url : WEB_ROOT + 'media/friends/add',
 				type: 'GET',
 				data: CleanParams({
-					user: params.user,
+					user: params.user
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1493,9 +1494,9 @@
 				url : WEB_ROOT + 'media/friends/del',
 				type: 'POST',
 				data: CleanParams({
-					nodes: params.nodes,
+					nodes: params.nodes
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1511,9 +1512,9 @@
 				url : WEB_ROOT + 'media/mp/del',
 				type: 'POST',
 				data: CleanParams({
-					nodes: params.nodes,
+					nodes: params.nodes
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1529,9 +1530,9 @@
 				url : WEB_ROOT + 'media/favorites/add',
 				type: 'POST',
 				data: CleanParams({
-					id: params.id,
+					id: params.id
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1547,9 +1548,9 @@
 				url : WEB_ROOT + 'media/favorites/del',
 				type: 'POST',
 				data: CleanParams({
-					id: params.id,
+					id: params.id
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1564,7 +1565,7 @@
 			return $.ajax({
 				url : WEB_ROOT + 'media/notifications/overviewcomments',
 				type: 'GET',
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1579,7 +1580,7 @@
 			return $.ajax({
 				url : WEB_ROOT + 'media/notifications/overviewvotes',
 				type: 'GET',
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1595,9 +1596,9 @@
 				url : WEB_ROOT + 'media/ticket/alert',
 				type: 'POST',
 				data: CleanParams({
-					id: params.id,
+					id: params.id
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 		/* ADMIN */
@@ -1614,9 +1615,9 @@
 				url : WEB_ROOT + 'admin/defaults/delalerts',
 				type: 'POST',
 				data: CleanParams({
-					nodes: params.nodes,
+					nodes: params.nodes
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1632,9 +1633,9 @@
 				url : WEB_ROOT + 'admin/defaults/deltickets',
 				type: 'POST',
 				data: CleanParams({
-					nodes: params.nodes,
+					nodes: params.nodes
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
 		},
 	   /*!
@@ -1650,11 +1651,11 @@
 				url : WEB_ROOT + 'admin/defaults/delcomment',
 				type: 'POST',
 				data: CleanParams({
-					id: params.id,
+					id: params.id
 				}),
-				dataType : 'json',
+				dataType : 'json'
 			});
-		},
+		}
 	};
 
 })();

@@ -30,7 +30,7 @@ $LAB
 
 		cell.init({
 			api : api,
-			logging : false,
+			logging : false
 		});
 
 		if (services.masonry)
@@ -63,7 +63,7 @@ $LAB
 				{
 					minLength: 2,
 					scrollHeight: 220, 
-					source: res,
+					source: res
 				});
 			});
 		});
@@ -77,7 +77,7 @@ $LAB
 				{
 					minLength: 2,
 					scrollHeight: 220, 
-					source: res,
+					source: res
 				});
 			});
 		});

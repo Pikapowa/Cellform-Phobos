@@ -20,7 +20,7 @@ $.isDeferred = function(obj)
 		data:
 		{
 			ajax: 'true',
-			csrf: translations.Csrf,
+			csrf: translations.Csrf
 		},
 		beforeSend: function(xhr, settings)
 		{
@@ -75,7 +75,7 @@ $.isDeferred = function(obj)
 		},
 		success: function()
 		{
-		},
+		}
 	});
 
 	var default_options = {

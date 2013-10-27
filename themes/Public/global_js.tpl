@@ -3,7 +3,7 @@
 	var masonry_url = '{{ masonry_url }}';
 
 	var services = {
-		'masonry':		{% if masonry_run == 'true' %} true {% else %} false {% endif %},
+		'masonry':		{% if masonry_run == 'true' %} true {% else %} false {% endif %}
 	};
 
     var translations = {
@@ -19,6 +19,6 @@
 		'Commented':	'{{ Notifications_Commented }}',
 		'Voted':		'{{ Notifications_Voted }}',
 		'AllVotes':		'{{ Notifications_AllVotes }}',
-		'AllComments':	'{{ Notifications_AllComments }}',
+		'AllComments':	'{{ Notifications_AllComments }}'
     };
 </script>

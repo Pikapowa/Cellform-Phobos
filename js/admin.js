@@ -22,7 +22,7 @@ $LAB
 
 		cell.init({
 			api : api,
-			logging : false,
+			logging : false
 		});
 
 		// MEMBER SEARCH
@@ -34,7 +34,7 @@ $LAB
 				{
 					minLength: 1,
 					scrollHeight: 220, 
-					source: res,
+					source: res
 				});
 			});
 		});
