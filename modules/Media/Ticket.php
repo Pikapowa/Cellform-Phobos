@@ -488,6 +488,8 @@ class Media_Ticket extends Media_Controller
 
 				$post = $this->_Lists($clause, false);
 				$response['post'] = $post[0];
+
+				$response['post']['title'] = html_entity_decode($response['post']['title']);
 			}
 		}
 
