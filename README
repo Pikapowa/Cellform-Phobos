@@ -22,6 +22,9 @@
 
 View Installation Guide : http://insomnia.c.free.fr/man.htm
 
+Bugs/Reports :
+	- Update CSS media queries for tablets devices. (nav-bar & permalink)
+
 Thanks to :
 
 	- LingLing my associed.
