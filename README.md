@@ -1,8 +1,8 @@
 Cellform-Phobos
 ================================
 
-View Installation Guide : http://insomnia.c.free.fr/man.htm
-View Demonstration Site : http://milkncoffee.fr/
+* View Installation Guide : http://insomnia.c.free.fr/man.htm
+* View Demonstration Site : http://milkncoffee.fr/
 
 ---------------
 Ajouts à venir
