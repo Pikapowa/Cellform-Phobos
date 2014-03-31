@@ -45,10 +45,11 @@ class Cellform_User extends Cellform_Auth
 	* @param string $email
 	* @param string $username
 	* @param string $password
-	* @param int $sex
+	* @param string $sex
+	* @param bool $valid
 	* @return string|false
 	*/
-	public function Register($email, $username, $password, $sex, $valid = false, $oauth_id = '', $level = LEVEL_USER)
+	public function Register($email, $username, $password, $sex, $valid, $oauth_id = '', $level = LEVEL_USER)
 	{
 		$s_email = $this->_db->SqlEscape($email);
 		$s_username = $this->_db->SqlEscape($username);
@@ -78,7 +79,7 @@ class Cellform_User extends Cellform_Auth
 						NOW(),
 						'" . (int)$level . "',
 						'" . $token . "',
-						'" . ((isdefined('EMAIL') || $valid) ? 0 : 1) . "',
+						'" . (isdefined('EMAIL') && $valid ? 0 : 1) . "',
 						'1',
 						'" . (($oauth_id) ? $oauth_id : 1) . "')";
 

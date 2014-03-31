@@ -92,7 +92,7 @@ class Loginbox_Home extends Loginbox_Controller
 		{
 			if (strcmp($input['password'], $input['password_confirm']) == 0)
 			{
-				$token = $this->_user->Register($input['email'], $input['username'], $input['password'], $input['sex']);
+				$token = $this->_user->Register($input['email'], $input['username'], $input['password'], $input['sex'], true);
 
 				if (!$token)
 				{

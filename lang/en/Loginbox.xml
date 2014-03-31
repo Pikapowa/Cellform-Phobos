@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language code="fr_FR">
+    <label index="General_Language_Locale">fr_FR.UTF-8</label>
+    <label index="General_Language_Name">French</label>
+    <label index="General_Language_Translator">CellForm</label>
+    <label index="General_Language_OriginalName">Français</label>
+    <label index="General_Language_NotFoundException">Fichier introuvable.</label>
+
+	<!-- GENERAL -->
+	<label index="General_Email">Email</label>
+	<label index="General_LinkToConnect">Cliquez ici pour vous connecter</label>
+	<label index="General_Yes">Oui</label>
+	<label index="General_No">Non</label>
+
+	<!-- FAILLED -->
+	<label index="Failled">Echec de la requête</label>
+	<label index="Failled_Alert">Si vous avez un problème contactez l'administration à l'adresse suivante :</label>
+	<label index="Failled_Nojs">Votre navigateur n'accepte pas Javascript ! Veuillez activé Javascript pour accèder à ce site.</label>
+
+	<!-- HEADERS.TPL - MENU -->
+    <label index="General_Loading">Merci de patienter pendant le chargement de la page</label>
+    <label index="General_Welcome">Bienvenue sur </label>
+    <label index="General_Nologin">Connectez vous pour accéder à cette page.</label>
+    <label index="General_Date">Date</label>
+    <label index="General_Home">Accueil</label>
+    <label index="General_Community">Communauté</label>
+    <label index="General_Subscribe">S'inscrire</label>
+    <label index="General_LongPowerBy">Supporté par la plate-forme CELLFORM.</label>
+    <label index="General_Apropos">A propos</label>
+	<label index="General_Version">1.0</label>
+	<label index="General_Return">Retour</label>
+
+	<!-- LOGIN.TPL -->
+    <label index="Login_Username">Nom d'utilisateur</label>
+    <label index="Login_EnterUsername">Entrer nom d'utilisateur</label>
+    <label index="Login_Password">Mot de passe</label>
+    <label index="Login_EntrerPassword">Entrer mot de passe</label>
+    <label index="Login_Connect">Connexion</label>
+	<label index="Login_ForgotPassword">Mot de passe oublié ?</label>
+
+	<!-- NOLOGIN.TPL -->
+	<label index="Nologin_SecureArea">Espace sécurisé</label>
+	<label index="Nologin_SecureAreaMore">(vous n'avez pas les droits nécéssaires pour visualiser cette page)</label>
+
+	<!-- RECOVERY.TPL -->
+	<label index="Recovery_EmailConfirm">Un email de confirmation vous sera envoyé</label>
+	<label index="Recovery_Reinit">Réinitialisation</label>
+
+	<!-- SIGNUP.TPL -->
+	<label index="Signup_Email">Email*</label>
+	<label index="Signup_Sex">Sexe*</label>
+	<label index="Signup_Password">Mot de passe*</label>
+	<label index="Signup_EnterPassword">Entrer mot de passe</label>
+	<label index="Signup_PasswordConfirm">Confirmation*</label>
+	<label index="Signup_EnterPasswordConfirm">Entrer mot de passe (confirmation)</label>
+	<label index="Signup_Username">Nom d'utilisateur*</label>
+	<label index="Signup_EnterUsername">Choisissez un pseudo</label>
+	<label index="Signup_EmailMore">Respectez le format email (Max. 30 caractères).</label>
+	<label index="Signup_AcceptedCharPseudo">Les caractères acceptés sont : a-z,A-Z,0-9,_,@,#,-,% (Max. 12 caractères)</label>
+	<label index="Signup_Man">Homme</label>
+	<label index="Signup_Woman">Femme</label>
+	<label index="Signup_Save">S'enregistrer</label>
+	<label index="Signup_CaptchaAnswer">Répondez à la question</label>
+	<label index="Signup_CaptchaMore">Les captcha sont là pour assurer la securité de la plateforme</label>
+
+	<!-- OAUTH.TPL -->
+	<label index="OAuth_Signup">S'enregistrer via OAuth</label>
+</language>

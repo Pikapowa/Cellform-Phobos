@@ -113,3 +113,15 @@ CREATE TABLE IF NOT EXISTS `cellform_users` (
   `oauth_id` decimal(24) DEFAULT 1,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+
+
+#table: 'cellform_chat'
+CREATE TABLE IF NOT EXISTS `cellform_chat` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `username` char(64) NOT NULL,
+  `username_d` char(64) NOT NULL,
+  `message` text NOT NULL,
+  `date` datetime DEFAULT NULL,
+  `useread` int(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8 ;

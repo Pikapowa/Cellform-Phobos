@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language code="fr_FR">
+
+	<!-- GENERAL -->
+	<label index="General_Welcome">Bienvenue sur</label>
+	<label index="General_Hello">Bonjour</label>
+
+	<!-- VALIDATOR.TPL -->
+	<label index="Validator_Title">Inscription</label>
+	<label index="Validator_Rules">Pensez à lire les règles avant de poster.</label>
+	<label index="Validator_Links">Voici votre lien de validation</label>
+
+	<!-- REQUEST_RECOVERY.TPL -->
+	<label index="RequestRecovery_Title">Changement de mot de passe</label>
+	<label index="RequestRecovery_Body">Pour recevoir votre nouveau mot de passe merci de cliquer</label>
+
+	<!-- RECOVERY.TPL -->
+	<label index="Recovery_Title">Nouveau mot de passe</label>
+	<label index="Recovery_Body">Votre nouveau mot de passe est</label>
+
+</language>

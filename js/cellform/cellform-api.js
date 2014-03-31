@@ -27,6 +27,11 @@
 		page = 1,
 		offset_gotop = 800;
 
+	var chatbox_heartcount = 0;
+		chatbox_heartmintime = 1000;
+		chatbox_heartmaxtime = 33000;
+		chatbox_hearttime = chatbox_heartmintime;
+
 	var $loading = $('.loading');
 	var $content = $('#content');
 
@@ -561,7 +566,7 @@
 						}
 						else
 						{
-							$messagebox.text('');
+							$('#message').val('');
 						}
 
 						_self.InsertComments(res.data, $permalink_coms, 'prepend');
@@ -723,7 +728,221 @@
 			return false;
 		});
 	}
+
+   /*!
+	* Call the long polling request for Chatbox service [SERVICE]
+	*
+	* \fn Service_Chatbox()
+	* \memberof Cellform
+	*/
+	Cellform.prototype.Service_Chatbox = function()
+	{
+		var _self = this;
+		var params = {};
+
+		_self.api('cometchatbox', params).then(function(res)
+		{
+			if (res == 'empty')
+			{
+				if (chatbox_heartcount >= 10)
+				{
+					chatbox_hearttime *= 2;
+					chatbox_heartcount = 1;
+
+					if (chatbox_hearttime > chatbox_heartmaxtime)
+					{
+						chatbox_hearttime = chatbox_heartmaxtime;
+					}
+				}
+			}
+			else
+			{
+				$.each(res.data, function(i,item)
+				{
+					if (item)
+					{
+						if ($('#chatbox_' + item.username).length <= 0)
+						{
+							_self.CreateChatbox(item.username);
+						}
+						else
+						{
+							$('#btn-notifs-onlinefriends').addClass('newmessage_box');
+							$('#contact_' + item.username).addClass('newmessage_user');
+						}
+
+						$('#chatbox_' + item.username + ' .messagebox-content').append('<div class="chatboxmessage"><b>' + item.username + ':&nbsp;&nbsp;</b><span class="chatboxmessagecontent">' + item.message + '</span></div><hr>');
+						$('#chatbox_' + item.username + ' .messagebox-content').scrollTop($('#chatbox_' + item.username + ' .messagebox-content')[0].scrollHeight);
+					}
+				});
+
+				chatbox_hearttime  = chatbox_heartmintime;
+				chatbox_heartcount = 1;
+			}
+
+			setTimeout(function()
+			{
+				return _self.Service_Chatbox();
+			}, chatbox_hearttime);
+
+			chatbox_heartcount++;
+		});
+	}
 	/* END SERVICES */
+
+   /*!
+	* Create Chatbox pop-in
+	*
+	* \fn CreateChatbox()
+	* \param string title
+	* \memberof Cellform
+	*/
+	Cellform.prototype.CreateChatbox = function(user)
+	{
+		var html = '';
+		var _self = this;
+
+		// Block scroll event & hide all content
+		if (_self.IsMobile())
+		{
+			$(window).unbind('scroll', Cellform.prototype.OnScroll);
+			window.scrollTo(0,0);
+			$content.hide();
+		}
+
+		// If Chatbox is already create make this
+		if ($('#chatbox_' + user).length > 0)
+		{
+			var $chatbox = $('#chatbox_' + user);
+
+			if ($chatbox.css('display') == 'none')
+			{
+				if ($('#btn-notifs-onlinefriends').hasClass('newmessage_box'))
+				{
+					$('#btn-notifs-onlinefriends').removeClass('newmessage_box');
+					$('#contact_' + user).removeClass('newmessage_user');
+				}
+
+				$chatbox.show();
+			}
+
+			$('#chatbox_' + user + ' .messagebox-content').scrollTop($('#chatbox_' + user + ' .messagebox-content')[0].scrollHeight);
+			$('#chatbox_' + user + ' textarea').focus();
+
+			return;
+		}
+
+		// If Chatbox not exists, create it
+		html += '<div class="messagebox-head">';
+		html += '<span>' + user + '</span>';
+		html += '</div>';
+
+		html += '<div class="messagebox-content"></div>';
+
+		html += '<div class="messagebox-input">';
+		html += '<textarea id="messagebox-textarea-' + user + '" class="messagebox-textarea" onkeydown="cell.SendInputChatbox(event, \'' + user + '\');"></textarea>';
+		html += '<a class="btn btn-primary submit-btn" href="#" onclick="cell.CloseChatbox(\'' + user + '\')">X</i></a>';
+		html +=	'</div>';
+
+		html += '<div class="messagebox-footer"></div>';
+
+		$('<div />').attr('id','chatbox_' + user)
+		.addClass('messagebox')
+		.html(html)
+		.appendTo($('body'));
+
+		var params = {
+			'username_d' : user
+		};
+
+		_self.api('startchatbox', params).then(function(res)
+		{
+			$.each(res.data, function(i,item)
+			{
+				if (item)
+				{
+					$('#chatbox_' + user + ' .messagebox-content').append('<div class="chatboxmessage"><b>' + item.username + ':&nbsp;&nbsp;</b><span class="chatboxmessagecontent">' + item.message + '</span></div><hr>');
+				}
+			});
+		});
+
+		$('#chatbox_' + user).show();
+	}
+
+   /*!
+	* Close Chatbox pop-in
+	*
+	* \fn CloseChatbox(title)
+	* \param string title
+	* \memberof Cellform
+	*/
+	Cellform.prototype.CloseChatbox = function(user)
+	{
+		var _self = this;
+
+		$('#chatbox_' + user).hide();
+
+		// RELAUNCH INFINITE SCROLL
+		if (_self.IsMobile())
+		{
+			$content.show();
+			$container.masonry();
+			$(window).bind('scroll', Cellform.prototype.OnScroll);
+		}
+	}
+
+   /*!
+	* Send your Chatbox message
+	*
+	* \fn SendInputChatbox(event, textarea, title)
+	* \param object event
+	* \param string textarea
+	* \param string title
+	* \memberof Cellform
+	*/
+	Cellform.prototype.SendInputChatbox = function(event, user)
+	{
+		var _self = this;
+		var params = {};
+
+		if(event.keyCode == 13 && event.shiftKey == 0)
+		{
+			var message;
+			var $textarea = $('#messagebox-textarea-' + user);
+
+			event.preventDefault();
+
+			message = $textarea.val();
+			message = message.replace(/^\s+|\s+$/g, '');
+
+			$textarea.val('');
+			$textarea.focus();
+
+			if (message != '')
+			{
+				params = {
+					'username_d' : user,
+					'message' : message
+				};
+
+				_self.api('sendchatbox', params).then(function(res)
+				{
+					if (res == 'success')
+					{
+						message = message.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');
+
+						$chatbox_content = $('#chatbox_' + user + ' .messagebox-content');
+
+						$chatbox_content.append('<div class="message"><b>' + translations.Username + ':&nbsp;&nbsp;</b><span class="messagecontent">' + message + '</span></div><hr>');
+						$chatbox_content.scrollTop($chatbox_content[0].scrollHeight);
+
+						chatbox_hearttime = chatbox_heartmintime;
+						chatbox_heartcount = 1;
+					}
+				});
+			}
+		}
+	}
 
    /*!
 	* Insert comment(s) in the DOM
@@ -958,6 +1177,37 @@
 			html += '</li>';
 
 			$('#notifs-votes-list').html(html);
+		});
+	}
+
+   /*!
+	*  Retrieves all your online friends & insert in bottom bar.
+	*
+	* \fn GetNotifsOnlineFriends()
+	* \memberof Cellform
+	*/
+	Cellform.prototype.GetNotifsOnlineFriends = function()
+	{
+		var _self = this;
+		var html = '';
+
+		_self.api('getfriends_online').then(function(res)
+		{
+			$('#notifs-onlinefriends-list').html(html);
+
+			if (res != 'empty')
+			{
+				res = res.friends;
+
+				$.each(res, function(key, value)
+				{
+					html += '<li>';
+					html += '<a id="contact_' + value.friends + '" href="#chat" onclick="cell.CreateChatbox(\'' + value.friends + '\');">' + value.friends + '</a>';
+					html += '</li>';
+				});
+
+				$('#notifs-onlinefriends-list').html(html);
+			}
 		});
 	}
 
@@ -1434,6 +1684,59 @@
 			});
 		},
 	   /*!
+		* START CHATBOX & REQUEST FIVES LAST MESSAGES
+		*
+		* \fn startchatbox()
+		* \memberof Cellform.API
+		* \return jqXHR
+		*/
+		'startchatbox' : function(params)
+		{
+			return $.ajax({
+				url : WEB_ROOT + 'media/chatbox/start',
+				type: 'GET',
+				data: CleanParams({
+					username_d: params.username_d,
+				}),
+				dataType : 'json',
+			});
+		},
+	   /*!
+		* SEND MESSAGE TO CHATBOX
+		*
+		* \fn sendchatbox()
+		* \memberof Cellform.API
+		* \return jqXHR
+		*/
+		'sendchatbox' : function(params)
+		{
+			return $.ajax({
+				url : WEB_ROOT + 'media/chatbox/send',
+				type: 'POST',
+				data: CleanParams({
+					username_d: params.username_d,
+					message: params.message
+				}),
+				dataType : 'json'
+			});
+		},
+	   /*!
+		* LONG POLLING CHATBOX REQUEST
+		*
+		* \fn cometchatbox()
+		* \memberof Cellform.API
+		* \return jqXHR
+		*/
+		'cometchatbox' : function(params)
+		{
+			return $.ajax({
+				url : WEB_ROOT + 'media/chatbox/comet',
+				type: 'GET',
+				timeout: 40000,
+				dataType : 'json'
+			});
+		},
+	   /*!
 		* AUTOCOMPLETE USER LIST
 		*
 		* \fn userlist()
@@ -1579,6 +1882,21 @@
 		{
 			return $.ajax({
 				url : WEB_ROOT + 'media/notifications/overviewvotes',
+				type: 'GET',
+				dataType : 'json'
+			});
+		},
+	   /*!
+		* GET ALL YOUR ONLINE FRIENDS
+		*
+		* \fn getfriends_online()
+		* \memberof Cellform.API
+		* \return jqXHR
+		*/
+		'getfriends_online' : function()
+		{
+			return $.ajax({
+				url : WEB_ROOT + 'media/friends/online',
 				type: 'GET',
 				dataType : 'json'
 			});

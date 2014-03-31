@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language code="fr_FR">
+    <label index="General_Language_Locale">fr_FR.UTF-8</label>
+    <label index="General_Language_Name">French</label>
+    <label index="General_Language_Translator">CellForm</label>
+    <label index="General_Language_OriginalName">Français</label>
+    <label index="General_Language_NotFoundException">Fichier introuvable.</label>
+
+	<!-- GENERAL -->
+	<label index="General_Email">Email</label>
+	<label index="General_AcceptedChar">Les caractères acceptés sont : a-z,A-Z,0-9,_,@,#,-,%</label>
+	<label index="General_LinkToConnect">Cliquez ici pour vous connecter</label>
+	<label index="General_Yes">Oui</label>
+	<label index="General_No">Non</label>
+	<label index="General_Optional">optionnel</label>
+	<label index="General_Modify">Modifier les changements</label>
+	<label index="General_Delete">Supprimer</label>
+	<label index="General_Deleted">Supprimé(e)</label>
+	<label index="General_Date">Date</label>
+
+	<!-- PANEL -->
+	<label index="General_Admin">Panneau d'administration</label>
+	<label index="General_AdminWelcome">Bienvenue dans votre espace administration</label>
+	<label index="Site_Panel">Gestion du site</label>
+	<label index="Site_ConfigMain">Configuration générale</label>
+	<label index="Site_ConfigOAuth">Configuration oauth</label>
+	<label index="User_Panel">Gestion des utilisateurs</label>
+	<label index="User_Delete">Supprimer un membre</label>
+	<label index="Ticket_Panel">Gestion des billets</label>
+	<label index="Ticket_Alerts">Voir les alertes</label>
+	<label index="Admin_Panel">Gestion de l'administration</label>
+	<label index="Admin_Quit">Quitter l'administration</label>
+
+	<!-- CONFIG-MAIN.TPL -->
+	<label index="Site_Name">Nom du site</label>
+	<label index="Site_Title">Titre du site</label>
+	<label index="Site_Desc">Description du site</label>
+	<label index="Site_Mail">Email du site</label>
+	<label index="Site_Id">ID de la plateforme</label>
+	<label index="Site_Lang">Langue du site</label>
+	<label index="Site_PicturePresent">Image de présentation</label>
+	<label index="Site_PictureBg">Image de fond</label>
+	<label index="Site_PictureBanner">Bannière</label>
+	<label index="Site_LoadImagePresent">Charger votre image de présentation (JPG | min. 480x0) :</label>
+	<label index="Site_LoadImageBg">Charger votre image de fond (JPG) :</label>
+	<label index="Site_LoadImageBanner">Charger votre banniere (PNG) :</label>
+	<label index="Site_OAuthFacebook">Facebook Connect</label>
+	<label index="Site_OAuthGoogle">Google Connect</label>
+	<label index="Site_OAuthAppID">Application ID</label>
+	<label index="Site_OAuthSecret">Clé secrète</label>
+
+	<label index="Site_NameMore">Définissez le nom de votre site. (Max. 20 caractères)</label>
+	<label index="Site_TitleMore">Définissez le titre de votre site. (Max. 64 caractères)</label>
+	<label index="Site_DescMore">Définissez une description de votre site. (Max. 128 caractères)</label>
+	<label index="Site_MailMore">Définissez une adresse mail réservée au site</label>
+	<label index="Site_IdMore">Définissez un identifiant destiné aux asset (CSS, JS)</label>
+	<label index="Site_LangMore">Indiquez votre langue dans le format suivant</label>
+	<label index="Site_PicturePresentMore">Définissez une image de présentation</label>
+	<label index="Site_PictureBgMore">Définissez une image de fond pour la page de présentation</label>
+	<label index="Site_PictureBannerMore">Définissez une bannière pour la page de principale</label>
+	<label index="Site_OAuthAppIDMore">Définissez le AppID d\'un compte developpeur OAuth</label>
+	<label index="Site_OAuthSecretMore">Définissez la clée secrète d\'un compte developpeur OAuth</label>
+
+	<!-- DELALERTS.TPL -->
+	<label index="Ticket_AlertsDelete">Supprimer alerte(s)</label>
+	<label index="Ticket_Delete">Supprimer billet(s)</label>
+	<label index="Ticket_Title">Titre du billet</label>
+	<label index="Ticket_Author">Auteur du billet</label>
+	<label index="Ticket_AlertAuthor">Auteur de l'alerte</label>
+	
+</language>

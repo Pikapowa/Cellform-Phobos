@@ -126,6 +126,43 @@ class Media_Friends extends Media_Controller
 	}
 
 	/**
+	* List all online friends (accuracy of 3 minutes)
+	*
+	* @access public
+	* @return array
+	*/
+	public function Online()
+	{
+		if ($this->_http->Is_Set('ajax'))
+		{
+			$response = array();
+
+			$data = $this->_Lists();
+
+			foreach($data as $key => $val)
+			{
+				$expire = strtotime($val['lastvisit']);
+
+				$bool = ($expire >= (time() - (60 * 3)));
+
+				if ($bool)
+				{
+					$response['friends'][] = $val;
+				}
+			}
+
+			if (!empty($response))
+			{
+				echo $this->_http->GetPostBody('application/json', $response);
+			}
+			else
+			{
+				echo $this->_http->GetPostBody('application/json', 'empty');
+			}
+		}
+	}
+
+	/**
 	* Returns users-friends with $clause layout
 	*
 	* @access protected
@@ -136,7 +173,8 @@ class Media_Friends extends Media_Controller
 		$sql = "SELECT f.id,
 			f.friends,
 			u.score,
-			u.avatar
+			u.avatar,
+			u.lastvisit
 			FROM cellform_friends AS f
 				LEFT JOIN cellform_users AS u
 					ON f.friends = u.username

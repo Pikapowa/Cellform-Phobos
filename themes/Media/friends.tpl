@@ -18,9 +18,16 @@
 		</thead>
 		<tbody>
 		{% for friend in friends %}
+
+			{% if friend.lastvisit|date('U') >= "now"|date_modify("-3 minute")|date('U') %}
+				{% set state = 'online' %}
+			{% else %}
+				{% set state = 'offline' %}
+			{% endif %}
+
 			<tr id="nodes_{{ friend.id }}">
 				<td><input type="checkbox" name="nodes[]" value="{{ friend.id }}"></td>
-				<td><a href="/media/users/profil/&user={{ friend.friends }}"><img class="avatar-frame mini" src="/media/avatars/{{ friend.avatar }}" border="0" alt="{{ friend.friends }}"></a></td>
+				<td><a href="/media/users/profil/&user={{ friend.friends }}"><img class="avatar-frame mini {{ state }}" src="/media/avatars/{{ friend.avatar }}" border="0" alt="{{ friend.friends }}"></a></td>
 				<td><a href="/media/users/profil/&user={{ friend.friends }}">{{ friend.friends }}</a></td>
 				<td>{{ friend.score }}</td>
 			</tr>

@@ -43,7 +43,9 @@ $LAB
 			cell.Service_Permalink();
 		}
 
-		// NOTIFICATIONS IN NAV-BAR
+		cell.Service_Chatbox();
+
+		// NOTIFICATIONS IN TOP NAV-BAR
 		$(document).on('click', '#btn-notifs-comments', function ()
 		{
 			cell.GetNotifsComments();
@@ -52,6 +54,12 @@ $LAB
 		$(document).on('click', '#btn-notifs-votes', function ()
 		{
 			cell.GetNotifsVotes();
+		});
+
+		// NOTIFICATIONS IN BOTTOM NAV-BAR
+		$(document).on('click', '#btn-notifs-onlinefriends', function ()
+		{
+			cell.GetNotifsOnlineFriends();
 		});
 
 		// MEMBER SEARCH

@@ -34,6 +34,7 @@
 </head>
 
 <body>
+
 <!-- START BODY -->
 
 {% if permalink == 'true' %}

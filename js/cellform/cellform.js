@@ -45,7 +45,7 @@ $.isDeferred = function(obj)
 			case 'success':
 				break;
 			case 'timeout':
-				alert('Network timed out. Please check your network.');
+				//alert('Network timed out. Please check your network.');
 				break;
 			case 'parseerror' :
 				alert('Some server error occurred. Please contact support');
@@ -67,7 +67,7 @@ $.isDeferred = function(obj)
 					alert('Server busy. Please wait a while...');
 					break;
 				default:
-					alert('Server error occurred(' + xhr.status + '). Please wait for maintainance. Response : ' + xhr.responseText);
+					//alert('Server error occurred(' + xhr.status + '). Please wait for maintainance. Response : ' + xhr.responseText);
 					break;
 				}
 				'console' in window && console.error('ajaxError', stat, xhr);
@@ -86,7 +86,7 @@ $.isDeferred = function(obj)
 
 	base.prototype =
 	{
-		_log : function()
+		_log : function(test)
 		{
 			// ('console' in window) && console.log.apply(console, arguments);
 		},

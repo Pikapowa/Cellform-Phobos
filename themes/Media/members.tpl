@@ -23,13 +23,19 @@
 	</thead>
 	<tbody>
 {% for user in users %}
-<tr>
-	<td><a href="/media/users/profil/&user={{ user.username }}"><img class="avatar-frame mini" src="/media/avatars/{{ user.avatar }}" border="0" alt="{{ user.username }}"></a></td>
-	<td><a href="/media/users/profil&user={{ user.username }}">{{ user.username }}</a></td>
-	<td>{{ user.score }}</td>
-</tr>
-{% endfor %}
-</tbody>
+	{% if user.lastvisit|date('U') >= "now"|date_modify("-3 minute")|date('U') %}
+		{% set state = 'online' %}
+	{% else %}
+		{% set state = 'offline' %}
+	{% endif %}
+
+		<tr>
+			<td><a href="/media/users/profil/&user={{ user.username }}"><img class="avatar-frame mini {{ state }}" src="/media/avatars/{{ user.avatar }}" border="0" alt="{{ user.username }}"></a></td>
+			<td><a href="/media/users/profil&user={{ user.username }}">{{ user.username }}</a></td>
+			<td>{{ user.score }}</td>
+		</tr>
+	{% endfor %}
+	</tbody>
 </table>
 </div>
 

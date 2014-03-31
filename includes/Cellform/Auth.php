@@ -71,6 +71,12 @@ class Cellform_Auth
 			return false;
 		}
 
+		$sql = "UPDATE cellform_users
+			SET lastvisit = NOW()
+			WHERE email = '" . $s_email . "'";
+
+		$this->_db->SqlQuery($sql);
+
 		return true;
 	}
 

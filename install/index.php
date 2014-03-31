@@ -53,8 +53,6 @@ class Cellform_Install
 		self::$http = Cellform_Front::GetToolBox()->GetHTTP();
 		self::$user = Cellform_Front::GetToolBox()->GetUser();
 
-		@self::$db->SqlConnect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, false);
-
 		$valide_rules = array(
 			'mode'	=> 'Alphanumeric|MaxLen,20',
 		);
@@ -95,16 +93,31 @@ class Cellform_Install
 		self::$http->SendHeaders();
 	}
 
+	/**
+	* Print intro template
+	*
+	* @access public
+	*/
 	public function Intro()
 	{
 		return Cellform_Front::GetRender('intro', Cellform_Front::GetAllTranslation());
 	}
 
+	/**
+	* Print licence condition of use
+	*
+	* @access public
+	*/
 	public function Licence()
 	{
 		return Cellform_Front::GetRender('licence', Cellform_Front::GetAllTranslation());
 	}
 
+	/**
+	* Check all required component
+	*
+	* @access public
+	*/
 	public function Required()
 	{
 		$response = array();
@@ -187,7 +200,12 @@ class Cellform_Install
 
 		return Cellform_Front::GetRender('required', array_merge(Cellform_Front::GetAllTranslation(), $response));
 	}
-	
+
+	/**
+	* Insert constant variable in config.conf.php
+	*
+	* @access public
+	*/
 	public function ConfigMain()
 	{
 		$response = array();
@@ -233,6 +251,11 @@ class Cellform_Install
 		return Cellform_Front::GetRender('config_main', array_merge(Cellform_Front::GetAllTranslation(), $response));
 	}
 
+	/**
+	* Configure database auth
+	*
+	* @access public
+	*/
 	public function ConfigDb()
 	{
 		$response = array();
@@ -283,6 +306,11 @@ class Cellform_Install
 		return Cellform_Front::GetRender('config_db', array_merge(Cellform_Front::GetAllTranslation(), $response));
 	}
 
+	/**
+	* Install all table (install.sql)
+	*
+	* @access public
+	*/
 	public function Install()
 	{
 		$response = array();
@@ -296,6 +324,8 @@ class Cellform_Install
 		{
 			Cellform_Errno::Error('Need file install.sql !');
 		}
+
+		self::$db->SqlConnect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, false);
 
 		$shemas = file_get_contents('install.sql');
 		$shemas = remove_remarks($shemas);
@@ -328,6 +358,11 @@ class Cellform_Install
 		return Cellform_Front::GetRender('install', array_merge(Cellform_Front::GetAllTranslation(), $response));
 	}
 
+	/**
+	* Insert administrator account
+	*
+	* @access public
+	*/
 	public function ConfigAdmin()
 	{
 		$response = array();
@@ -338,6 +373,8 @@ class Cellform_Install
 			'password_confirm'	=> 'Required|AlphaNumeric|MaxLen,30',
 		);
 
+		self::$db->SqlConnect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, false);
+
 		self::$http->ValidatorRules($valide_rules);
 		$input = self::$http->Analyzer($_POST);
 
@@ -347,7 +384,7 @@ class Cellform_Install
 			{
 				if (strcmp($input['password'], $input['password_confirm']) == 0)
 				{
-					self::$user->Register($input['email'], $input['username'], $input['password'], 1, false, null, LEVEL_ADMIN);
+					self::$user->Register($input['email'], $input['username'], $input['password'], 'none', false, null, LEVEL_ADMIN);
 
 					self::$http->Header('Location', '/install/index.php?mode=installfinish');
 					self::$http->SendHeaders();
@@ -364,11 +401,21 @@ class Cellform_Install
 		return Cellform_Front::GetRender('config_admin', array_merge(Cellform_Front::GetAllTranslation(), $response));
 	}
 
+	/**
+	* All is okay, it's end !
+	*
+	* @access public
+	*/
 	public function InstallFinish()
 	{
 		return Cellform_Front::GetRender('install_finish', Cellform_Front::GetAllTranslation());
 	}
 
+	/**
+	* Function of checking-list
+	*
+	* @access private
+	*/
 	private function _CheckList(array $require = array())
 	{
 		$ready = 'yes';

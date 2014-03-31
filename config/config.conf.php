@@ -1,13 +1,15 @@
 <?php
 /**
 *	CONFIG-SAVE.CONF.PHP
-*	VOUS POUVEZ COMMENTER LA LIGNE EMAIL POUR DESACTIVER L'ENVOI DE MAILS.
+*	YOU CAN COMMENT EMAIL DEFINE FOR DISABLE EMAIL VALIDATION.
 *
 *	WARNING : NOT USE TAB IN CONFIG FILE !
 */
 
+date_default_timezone_set('Europe/Paris');
+
 define('DMS',              'Mysql');
-define('DB_HOST',          'hostname');
+define('DB_HOST',          'localhost');
 define('DB_NAME',          'cellform');
 define('DB_USER',          'cellform_db_user');
 define('DB_PASSWORD',      'cellform_db_password');

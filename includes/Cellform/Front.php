@@ -17,7 +17,7 @@ class Cellform_Front
 	*/
     public static function GetVersion()
 	{
-        return '1.0';
+        return '1.1.0';
     }
 
 	/**

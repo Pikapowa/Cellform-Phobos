@@ -67,11 +67,6 @@ body {
 	z-index:99999;
 }
 
-.navbar-inverse .navbar-inner {
-	filter:none;
-	z-index:99999;
-}
-
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
 	background-color:#282828;
 }
@@ -150,6 +145,10 @@ body {
 	height:40px;
 }
 
+.avatar-frame.online {
+	border:3px solid #01FF45;
+}
+
 .header-ban {
 	position:relative;
 	padding:40px 0;
@@ -200,7 +199,9 @@ body {
 	right:0;
 	bottom:0;
 	left:0;
-	background:url(/images/media/banner.png);
+	/*background-repeat:no-repeat; only for non-pattern background */
+	background:url(/images/media/banner-pattern.png); /* banner-pattern.png */
+	/*background-size:100% 100%; only for non-pattern background */
 }
 
 /**
@@ -212,7 +213,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2/1) {
 	.header-ban:after {
-		background-size:150px 150px;
+		background-size:100% 100%; /* background-size:150px 150px; */
 	}
 }
 
@@ -579,6 +580,70 @@ tr.newmail{
 
 /**
 *----------------------------------------------------------------
+*	CHATBOX / MESSAGEBOX
+*----------------------------------------------------------------
+*/
+.messagebox {
+	position:fixed;
+	bottom:50px;
+	width:325px;
+	left:0;
+	display:none;
+	z-index:99999999;
+}
+
+.messagebox-head {
+	background-color:#333333;
+	padding:7px;
+	color:#ffffff;
+	border-right:1px solid #333333;
+	border-left:1px solid #333333;
+}
+
+.messagebox-content {
+	font-family:arial,sans-serif;
+	font-size:13px;
+	color:#0000000;
+	height:200px;
+	width:309px;
+	overflow-y:auto;
+	overflow-x:auto;
+	padding:7px;
+	border-left:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #eeeeee;
+	background-color:#ffffff;
+	line-height:1.3em;
+}
+
+.messagebox-input {
+	padding:5px;
+	background-color:#ffffff;
+	border-left:1px solid #cccccc;
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+}
+
+.messagebox-textarea {
+	width:310px;
+	height:44px;
+	padding:3px 0pt 3px 3px;
+	border:1px solid #eeeeee;
+	margin:1px;
+	overflow:hidden;
+}
+
+.newmessage_user {
+	background-color:red;
+}
+
+.newmessage_box {
+	background-image: linear-gradient(to bottom, #FF0303, #111111);
+	border-color: #FF0303;
+}
+
+/**
+*----------------------------------------------------------------
 *	STYLESHEET FOR SMART-PHONE & TABLETS [PERMALINK & BODY]
 *----------------------------------------------------------------
 */
@@ -593,6 +658,9 @@ tr.newmail{
 		margin: 0;
 	}
 
+	/**
+	* Permalink for smartphone
+	*/
 	#permalink-post {
 		position: relative;
 		top:0;
@@ -646,6 +714,29 @@ tr.newmail{
 		position:absolute;
 		right:0;
 		top:1.5%;
+	}
+
+	/**
+	* Chatbox / Messagebox for smartphone
+	*/
+	.messagebox {
+		position:absolute;
+		top:0;
+		width:100%;
+		display:block;
+	}
+
+	.messagebox-content {
+		width:auto;
+		height:auto;
+	}
+
+	.messagebox-textarea {
+		width:100%;
+	}
+
+	.messagebox-footer {
+		height:70px;
 	}
 }
 
