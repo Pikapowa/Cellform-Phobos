@@ -11,16 +11,10 @@
 <script type="text/javascript" src="/js/bootstrap/bootstrap.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/themes/css/bootstrap/bootstrap-2.css">
-<link rel="stylesheet" type="text/css" href="/themes/css/cellform/community.css">
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Iceland">
 
 <link rel="stylesheet" type="text/css" href="/themes/css/bootstrap/bootstrap-responsive-2.css">
-
-<style>
-body {
-	margin-top: 60px;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="/themes/css/cellform/community.css">
 
 </head>
 
